@@ -7,10 +7,7 @@ class ThemeRouteDemo extends StatefulWidget {
 }
 
 class _ThemeRouteDemoState extends State<ThemeRouteDemo> {
-
   Color _themeColor = Colors.green; //当前路由主题色
-
-
   @override
   Widget build(BuildContext context) {
     ThemeData themeData = Theme.of(context);

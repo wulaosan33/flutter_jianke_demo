@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 //app标题背景
 final appBarColor = LinearGradient(
-  colors: [Color(0xFF2892FF), Color(0xFF56A9FF)],
+  colors: [Colors.green, Colors.greenAccent],
 );
 
 //颜色
