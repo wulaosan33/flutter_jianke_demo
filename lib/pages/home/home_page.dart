@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage>
         },
       ),
       bottomNavigationBar: new Material(
-        color: backBlue,
+        color: Colors.green,
         child: new TabBar(
           controller: _tabController,
           onTap: (index) {
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage>
                 duration: Duration(microseconds: 100), curve: Curves.easeIn);
           },
           tabs: getTabs(),
-          indicatorColor: Colors.blue,
+          indicator: const BoxDecoration(),
         ),
       ),
     );
