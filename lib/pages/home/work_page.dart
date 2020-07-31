@@ -25,7 +25,7 @@ class _WorkPageState extends State<WorkPage> {
 
   _workPageAppBar() {
     double tabHeight =
-        MediaQueryData.fromWindow(window).padding.top + kToolbarHeight + 30;
+        MediaQueryData.fromWindow(window).padding.top + kToolbarHeight ;
     return PreferredSize(
       preferredSize: Size.fromHeight(tabHeight),
       child: Container(
@@ -39,18 +39,6 @@ class _WorkPageState extends State<WorkPage> {
                 GestureDetector(
                   onTap: () {},
                   child: Container(
-                    height: 60,
-                    width: 60,
-                    decoration: BoxDecoration(
-                        color: Colors.amberAccent,
-                        borderRadius: BorderRadius.circular(30.0),
-                        image: DecorationImage(
-                          image: AssetImage(
-                            'assets/images/touxiang.jpg',
-                          ),
-                        )),
-                    margin: EdgeInsets.only(
-                        top: MediaQueryData.fromWindow(window).padding.top + 10, left: 20),
                   ),
                 ),
               ],

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
@@ -44,10 +46,38 @@ class _SearchPageState extends State<SearchPage> {
     });
 
     return Scaffold(
+      appBar: _searchPageAppBar(),
       backgroundColor: Colors.orange,
       body: _listView(),
     );
   }
+
+  _searchPageAppBar() {
+    double tabHeight =
+        MediaQueryData.fromWindow(window).padding.top + kToolbarHeight;
+    return PreferredSize(
+      preferredSize: Size.fromHeight(tabHeight),
+      child: Container(
+        height: tabHeight,
+        color: Colors.green,
+        child: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
 
   Widget _listView() {
     return Container(
@@ -98,16 +128,13 @@ class _SearchPageState extends State<SearchPage> {
 //              height: 200,
               child: ListView.separated(
                 controller: _scrollController,
-
                 /// 内容适配,无限尺寸,NeverScrollableScrollPhysics禁止滚动时候,需要自适应,不然不显示
                 shrinkWrap: true,
-
                 ///滑动类型设置 NeverScrollableScrollPhysics 禁止滑动
 //                physics: NeverScrollableScrollPhysics(),
 //              physics: FixedExtentScrollPhysics(),
                 //确定每一个item的高度 会让item加载更加高效
 //            itemExtent: 200.0,
-
                 //cacheExtent  设置预加载的区域
 //            cacheExtent: 30.0,
                 /// 分割线属性

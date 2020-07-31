@@ -38,7 +38,6 @@ class DrawerView extends StatelessWidget {
               color: Colors.black,
               size: 25.0,
             ),
-//                  leading: Icon(Icons.message,color: Colors.orange,size: 22.0,),
             onTap: () {
 
             },
