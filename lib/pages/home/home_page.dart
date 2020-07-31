@@ -18,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
   PageController _pageController;
-  final List<Widget> _pages = [SearchPage(), UserPage(), WorkPage()];
+  final List<Widget> _pages = [UserPage(),SearchPage(),  WorkPage()];
 
   @override
   void initState() {
@@ -45,9 +45,6 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(""),
-      ),
       body: new PageView(
         controller: _pageController,
         children: _pages,
@@ -72,8 +69,8 @@ class _MyHomePageState extends State<MyHomePage>
 
   List<Widget> getTabs() {
     List<Widget> widgets = [
-      CustomTabBarItem("发现", Icons.search),
       CustomTabBarItem("用户", Icons.rowing),
+      CustomTabBarItem("发现", Icons.search),
       CustomTabBarItem("工作", Icons.monetization_on)
     ];
     return widgets;
