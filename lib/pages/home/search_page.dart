@@ -98,8 +98,10 @@ class _SearchPageState extends State<SearchPage> {
 //              height: 200,
               child: ListView.separated(
                 controller: _scrollController,
+
                 /// 内容适配,无限尺寸,NeverScrollableScrollPhysics禁止滚动时候,需要自适应,不然不显示
                 shrinkWrap: true,
+
                 ///滑动类型设置 NeverScrollableScrollPhysics 禁止滑动
 //                physics: NeverScrollableScrollPhysics(),
 //              physics: FixedExtentScrollPhysics(),
@@ -108,7 +110,6 @@ class _SearchPageState extends State<SearchPage> {
 
                 //cacheExtent  设置预加载的区域
 //            cacheExtent: 30.0,
-
                 /// 分割线属性
                 padding: EdgeInsets.all(0),
                 separatorBuilder: (context, index) {
@@ -121,7 +122,6 @@ class _SearchPageState extends State<SearchPage> {
                     height: 1,
                   );
                 },
-
                 /**listView 个数*/
                 itemCount: dataList.length,
                 /**listView item*/
@@ -132,10 +132,10 @@ class _SearchPageState extends State<SearchPage> {
                       print('点击了 $index');
                     },
                     child: Container(
-                      color: Colors.red,
+                      color: Colors.cyanAccent,
                       alignment: Alignment.centerLeft,
                       height: 88,
-//                    width: 120,
+                      //width: 120,
                       child: Text('内容 - $index'),
                     ),
                   );
@@ -148,12 +148,11 @@ class _SearchPageState extends State<SearchPage> {
         emptyWidget: dataList.length > 0
             ? null
             : const Center(
-          child: Text('暂无数据'),
-        ),
+                child: Text('暂无数据'),
+              ),
       ),
     );
   }
-
 
   _notificationListener() {
     return NotificationListener(
@@ -190,7 +189,6 @@ class _SearchPageState extends State<SearchPage> {
       child: _listView(),
     );
   }
-
 
   _loadData() {
     List<int> tempList = [];

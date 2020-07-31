@@ -15,7 +15,7 @@ class ConverseListHeader extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: Colors.grey,
+            color: Colors.greenAccent,
             border: Border(
               bottom: BorderSide(
                 width: 2,
@@ -26,10 +26,10 @@ class ConverseListHeader extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Image.asset(
-                "asserts/images/Icon_Mac.png",
+                "assets/images/Icon_Mac.png",
                 width: 40,
                 height: 40,
-                color: Colors.white,
+                color: Colors.blueAccent,
               ),
               Container(
                 width: 10,
