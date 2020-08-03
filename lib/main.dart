@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/controller/router/router_util.dart';
 import 'package:untitled/controller/store/index.dart';
 import 'package:untitled/model/config_state_model.dart';
 import 'package:untitled/pages/home/home_page.dart';
 
 void main() {
+
+  /// 配置路由
+  RouterUtil.initRoutes();
   runApp(Store.init(child: MainApp()));
 }
 

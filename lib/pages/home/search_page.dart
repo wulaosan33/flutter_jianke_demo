@@ -68,6 +68,7 @@ class _SearchPageState extends State<SearchPage> {
                 GestureDetector(
                   onTap: () {},
                   child: Container(
+
                   ),
                 ),
               ],

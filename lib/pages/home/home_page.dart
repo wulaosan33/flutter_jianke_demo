@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:untitled/pages/home/search_page.dart';
 import 'package:untitled/pages/home/user_page.dart';
 import 'package:untitled/pages/home/work_page.dart';
-import 'package:untitled/tool/color_tools.dart';
 import 'package:untitled/widgets/custom_tabbar_item.dart';
 
 /// 首页

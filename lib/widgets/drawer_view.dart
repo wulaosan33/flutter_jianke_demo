@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/controller/router/router_util.dart';
+import 'package:untitled/pages/home/theme/theme_page.dart';
 
 /// 用户头像组件
 class DrawerView extends StatelessWidget {
@@ -69,7 +72,12 @@ class DrawerView extends StatelessWidget {
               size: 25.0,
             ),
             onTap: () {
-
+              RouterUtil.navigateTo(context, THEME_PAGE);
+             /* 无路由跳转
+              Navigator.of(context, rootNavigator: true)
+                  .push(CupertinoPageRoute(builder: (BuildContext context) {
+                return ThemePage();
+              }));*/
             },
           ),
           ListTile(

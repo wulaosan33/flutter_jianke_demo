@@ -17,5 +17,5 @@ class RouterItem {
   String provideModel;
 
   RouterItem(this.routerPath, this.widget,
-      {this.routerTitle, this.needLogin = true, this.provideModel = ''});
+      {this.routerTitle,  this.provideModel = ''});
 }

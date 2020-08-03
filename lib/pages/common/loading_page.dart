@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:untitled/controller/event/event_declaration.dart';
 import 'package:untitled/controller/event/loading_event.dart';
+import 'package:untitled/controller/router/router_util.dart';
 import 'package:untitled/utils/log_util.dart';
-import 'package:untitled/utils/route_util.dart';
 
 StreamSubscription initLoadingDialog(BuildContext context) {
   LogUtil.get().w('初始化监听------------------------Loading---------------------');
