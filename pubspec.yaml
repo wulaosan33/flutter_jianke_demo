@@ -23,7 +23,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  #数据管理层
+  provide: ^1.0.2
+  #日志输出
+  logger: ^0.7.0+2
+  #x响应式编程
+  rxdart: ^0.22.2
+  #web集成
+  webview_flutter: ^0.3.15+1
+  #第三方的路由信息控制
+  fluro: ^1.5.1
+  #状态管理
+  provider: ^4.1.2
+  path_provider: ^1.1.0
+  #事件管理
+  event_bus: ^1.1.0
+  #通用提示库
+  fluttertoast: ^3.1.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

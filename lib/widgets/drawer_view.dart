@@ -29,7 +29,7 @@ class DrawerView extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "消息",
+              "消息历史",
               textAlign: TextAlign.left,
               style: TextStyle(color: Colors.black,fontSize: 14),
             ),
@@ -44,7 +44,7 @@ class DrawerView extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "收藏",
+              "个人收藏",
               textAlign: TextAlign.left,
               style: TextStyle(color: Colors.black,fontSize: 14),
             ),
@@ -59,7 +59,22 @@ class DrawerView extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "设置",
+              "主题切换",
+              textAlign: TextAlign.left,
+              style: TextStyle(color: Colors.black,fontSize: 14),
+            ),
+            trailing: Icon(
+              Icons.settings_input_svideo,
+              color: Colors.black,
+              size: 25.0,
+            ),
+            onTap: () {
+
+            },
+          ),
+          ListTile(
+            title: Text(
+              "基本设置",
               textAlign: TextAlign.left,
               style: TextStyle(color: Colors.black,fontSize: 14),
             ),
@@ -69,7 +84,6 @@ class DrawerView extends StatelessWidget {
               size: 25.0,
             ),
             onTap: () {
-
             },
           ),
         ],

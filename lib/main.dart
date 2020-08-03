@@ -1,24 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/controller/store/index.dart';
+import 'package:untitled/model/config_state_model.dart';
 import 'package:untitled/pages/home/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Store.init(child: MainApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
+  @override
+  MainAppState createState() => MainAppState();
+}
 
+class MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '剑客',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(),
+    //  获取Provide状态
+    return Store.connect<ConfigModel>(
+        builder: (context, child, model) {
+          return MaterialApp(
+              theme: ThemeData(
+                  primaryColor: Colors.green
+              ),
+            home: MyHomePage(),
+          );
+        }
     );
   }
 }
+
 
 
 
