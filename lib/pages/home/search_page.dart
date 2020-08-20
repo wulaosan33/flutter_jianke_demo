@@ -62,7 +62,7 @@ class _SearchPageState extends State<SearchPage> {
         color: Colors.green,
         child: Column(
           children: <Widget>[
-            Row(
+            /*Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 GestureDetector(
@@ -72,7 +72,8 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                 ),
               ],
-            ),
+            ),*/
+            TextField()
           ],
         ),
       ),

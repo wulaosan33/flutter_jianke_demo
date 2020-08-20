@@ -6,7 +6,7 @@ ThemeWidget(double mSize, String themeName, String imagePath,) {
   return Column(
     children: <Widget>[
       GestureDetector(
-        onTap: (){
+        onTap: () {
 
         },
         child: Container(
@@ -32,3 +32,5 @@ ThemeWidget(double mSize, String themeName, String imagePath,) {
     ],
   );
 }
+
+
