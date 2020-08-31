@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///D:/dev/myProject/untitled/lib/widgets/drawer_view.dart';
-import 'package:untitled/tool/color_tools.dart';
+import 'package:untitled/widgets/drawer_view.dart';
+
 
 /// 用户页
 class UserPage extends StatefulWidget {
