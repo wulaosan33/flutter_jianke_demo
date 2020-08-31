@@ -9,19 +9,22 @@ import 'package:untitled/pages/home/theme/theme_page.dart';
 import 'package:untitled/provider/provider_config.dart';
 import 'package:untitled/utils/common_tool.dart';
 import 'package:untitled/utils/log_util.dart';
+import 'package:untitled/pages/work/blur_page.dart';
 
 //系统级路由
-// ignore: non_constant_identifier_names
 final String MAIN = "/";
-
-// ignore: non_constant_identifier_names
+//主题页面
 final String THEME_PAGE = '/themePage/';
+//高斯模糊
+final String BLUR_PAGE = '/blurPage/';
+
 
 class RouterUtil {
   static Router router = new Router();
   static List<RouterItem> routerItemList = [
     RouterItem(MAIN, MyHomePage(), routerTitle: "系统级主页面"),
     RouterItem(THEME_PAGE, ThemePage(), routerTitle: "主题换肤页面"),
+    RouterItem(BLUR_PAGE, BlurPage(), routerTitle: "高斯模糊页面"),
   ];
 
   /// 跳转到系统路由
@@ -87,19 +90,19 @@ class RouterUtil {
     ///初始化无参数的纯页面跳转链接
     routerItemList.forEach((RouterItem item) {
       if (item.widget is ParamStatefulWidget) {
-        LogUtil.get().i("开始添加简单参数路由信息${item.routerTitle} + ${item.routerPath}");
+        //LogUtil.get().i("开始添加简单参数路由信息${item.routerTitle} + ${item.routerPath}");
         router.define(item.routerPath + ":params",
             handler: ParamHandler(item.widget).getHandler());
       } else if (item.widget is ObjectStatefulWidget) {
-        LogUtil.get().i("开始添加对象参数路由信息${item.routerTitle} + ${item.routerPath}");
+        //LogUtil.get().i("开始添加对象参数路由信息${item.routerTitle} + ${item.routerPath}");
         router.define(item.routerPath + ":params",
             handler: ObjectHandler(item.widget).getHandler());
       } else if (item.widget is ObjectStatelessWidget) {
-        LogUtil.get().i("开始添加对象参数路由信息${item.routerTitle} + ${item.routerPath}");
+        //LogUtil.get().i("开始添加对象参数路由信息${item.routerTitle} + ${item.routerPath}");
         router.define(item.routerPath + ":params",
             handler: ObjectLessHandler(item.widget).getHandler());
       } else {
-        LogUtil.get().i("开始添加无参数路由信息${item.routerTitle} + ${item.routerPath}");
+        //LogUtil.get().i("开始添加无参数路由信息${item.routerTitle} + ${item.routerPath}");
         router.define(item.routerPath,
             handler: NoParamHandler(item.widget).getHandler());
       }

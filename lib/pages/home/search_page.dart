@@ -73,7 +73,7 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ],
             ),*/
-            TextField()
+            //TextField()
           ],
         ),
       ),
@@ -87,10 +87,10 @@ class _SearchPageState extends State<SearchPage> {
 //      height: 400,
       child: EasyRefresh(
         controller: _refreshController,
-//firstRefresh: true,
-//        enableControlFinishRefresh:true,
-//        enableControlFinishLoad:true,
-//        headerIndex:1,
+//      firstRefresh: true,
+//      enableControlFinishRefresh:true,
+//      enableControlFinishLoad:true,
+//      headerIndex:1,
         ///项目国际化异常
         header: ClassicalHeader(
           refreshText: '拉动刷新',
