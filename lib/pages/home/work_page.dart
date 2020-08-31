@@ -40,13 +40,16 @@ class _WorkPageState extends State<WorkPage> {
         height: tabHeight,
         color: Colors.green,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 GestureDetector(
                   onTap: () {},
                   child: Container(
+                    margin: EdgeInsets.only(top:MediaQueryData.fromWindow(window).padding.top),
+                    child: Text("演示",style: TextStyle(fontSize: 16,color: Colors.cyanAccent),),
                   ),
                 ),
               ],
@@ -57,7 +60,6 @@ class _WorkPageState extends State<WorkPage> {
     );
   }
 
-  // ignore: non_constant_identifier_names
   _workPageBody(BuildContext context) {
     return Scaffold(
       body: Column(
@@ -81,7 +83,9 @@ class _WorkPageState extends State<WorkPage> {
 
   _getData(){
     WorkItemModel workItem1 = new WorkItemModel(pageName:BLUR_PAGE,pageTitle:"01 高斯模糊");
+    WorkItemModel workItem2 = new WorkItemModel(pageName:TEXT_ROW_SPACE,pageTitle:"02 行间距调整");
     workItemLists.add(workItem1);
+    workItemLists.add(workItem2);
   }
 
 }

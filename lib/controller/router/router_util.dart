@@ -10,6 +10,7 @@ import 'package:untitled/provider/provider_config.dart';
 import 'package:untitled/utils/common_tool.dart';
 import 'package:untitled/utils/log_util.dart';
 import 'package:untitled/pages/work/blur_page.dart';
+import 'package:untitled/pages/work/text_row_space_page.dart';
 
 //系统级路由
 final String MAIN = "/";
@@ -17,6 +18,8 @@ final String MAIN = "/";
 final String THEME_PAGE = '/themePage/';
 //高斯模糊
 final String BLUR_PAGE = '/blurPage/';
+//行间距
+final String TEXT_ROW_SPACE = "/textRowSpacePage/";
 
 
 class RouterUtil {
@@ -25,6 +28,7 @@ class RouterUtil {
     RouterItem(MAIN, MyHomePage(), routerTitle: "系统级主页面"),
     RouterItem(THEME_PAGE, ThemePage(), routerTitle: "主题换肤页面"),
     RouterItem(BLUR_PAGE, BlurPage(), routerTitle: "高斯模糊页面"),
+    RouterItem(TEXT_ROW_SPACE, TextRowSpacePage(), routerTitle: "高斯模糊页面"),
   ];
 
   /// 跳转到系统路由
