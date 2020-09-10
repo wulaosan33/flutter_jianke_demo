@@ -6,11 +6,14 @@ import 'package:untitled/controller/router/router_item.dart';
 import 'package:untitled/pages/common/common_parent_page.dart';
 import 'package:untitled/pages/home/home_page.dart';
 import 'package:untitled/pages/home/theme/theme_page.dart';
+import 'package:untitled/pages/work/book_page.dart';
+import 'package:untitled/pages/work/bottom_page.dart';
+import 'package:untitled/pages/work/text_row_space_page.dart';
+import 'package:untitled/pages/work/html_page.dart';
 import 'package:untitled/provider/provider_config.dart';
 import 'package:untitled/utils/common_tool.dart';
 import 'package:untitled/utils/log_util.dart';
 import 'package:untitled/pages/work/blur_page.dart';
-import 'package:untitled/pages/work/text_row_space_page.dart';
 
 //系统级路由
 final String MAIN = "/";
@@ -20,7 +23,12 @@ final String THEME_PAGE = '/themePage/';
 final String BLUR_PAGE = '/blurPage/';
 //行间距
 final String TEXT_ROW_SPACE = "/textRowSpacePage/";
-
+//展示页
+final String BOOK_PAGE = "/bookPage/";
+//按钮页
+final String BOTTOM_PAGE = "/bottomPage/";
+//外接网页页面
+final String HTML_PAGE = "/htmlPage/";
 
 class RouterUtil {
   static Router router = new Router();
@@ -28,7 +36,10 @@ class RouterUtil {
     RouterItem(MAIN, MyHomePage(), routerTitle: "系统级主页面"),
     RouterItem(THEME_PAGE, ThemePage(), routerTitle: "主题换肤页面"),
     RouterItem(BLUR_PAGE, BlurPage(), routerTitle: "高斯模糊页面"),
-    RouterItem(TEXT_ROW_SPACE, TextRowSpacePage(), routerTitle: "高斯模糊页面"),
+    RouterItem(TEXT_ROW_SPACE, TextRowSpacePage(), routerTitle: "行间距页面"),
+    RouterItem(BOOK_PAGE, BookPage(), routerTitle: "书排列页面"),
+    RouterItem(BOTTOM_PAGE, BottomPage(), routerTitle: "按钮页面"),
+    RouterItem(HTML_PAGE, HtmlPage(), routerTitle: "外接网页页面"),
   ];
 
   /// 跳转到系统路由

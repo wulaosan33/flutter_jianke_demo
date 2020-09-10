@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/controller/router/router_util.dart';
+import 'package:untitled/pages/work/html_page.dart';
 import 'package:untitled/widgets/work_item_widget.dart';
 import 'package:untitled/model/work_item_model.dart';
 
@@ -14,7 +15,6 @@ class WorkPage extends StatefulWidget {
 class _WorkPageState extends State<WorkPage> {
 
   List<WorkItemModel> workItemLists = new List<WorkItemModel>();
-
 
   @override
   void initState() {
@@ -80,12 +80,17 @@ class _WorkPageState extends State<WorkPage> {
     return workItemWidgetLists;
   }
 
-
   _getData(){
     WorkItemModel workItem1 = new WorkItemModel(pageName:BLUR_PAGE,pageTitle:"01 高斯模糊");
     WorkItemModel workItem2 = new WorkItemModel(pageName:TEXT_ROW_SPACE,pageTitle:"02 行间距调整");
+    WorkItemModel workItem3 = new WorkItemModel(pageName:BOOK_PAGE,pageTitle:"03 书排列展示");
+    WorkItemModel workItem4 = new WorkItemModel(pageName:BOTTOM_PAGE,pageTitle:"04 按钮页面");
+    WorkItemModel workItem5 = new WorkItemModel(pageName:HTML_PAGE,pageTitle:"05 内接html页面");
     workItemLists.add(workItem1);
     workItemLists.add(workItem2);
+    workItemLists.add(workItem3);
+    workItemLists.add(workItem4);
+    workItemLists.add(workItem5);
   }
 
 }
