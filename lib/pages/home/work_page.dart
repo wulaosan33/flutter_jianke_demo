@@ -86,11 +86,15 @@ class _WorkPageState extends State<WorkPage> {
     WorkItemModel workItem3 = new WorkItemModel(pageName:BOOK_PAGE,pageTitle:"03 书排列展示");
     WorkItemModel workItem4 = new WorkItemModel(pageName:BOTTOM_PAGE,pageTitle:"04 按钮页面");
     WorkItemModel workItem5 = new WorkItemModel(pageName:HTML_PAGE,pageTitle:"05 内接html页面");
+    WorkItemModel workItem6 = new WorkItemModel(pageName:HTML_OUT_PAGE,pageTitle:"06 外接html页面");
+    WorkItemModel workItem7 = new WorkItemModel(pageName:SHAPE_PAGE,pageTitle:"07 形状页面");
     workItemLists.add(workItem1);
     workItemLists.add(workItem2);
     workItemLists.add(workItem3);
     workItemLists.add(workItem4);
     workItemLists.add(workItem5);
+    workItemLists.add(workItem6);
+    workItemLists.add(workItem7);
   }
 
 }

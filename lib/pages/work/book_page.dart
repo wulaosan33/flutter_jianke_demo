@@ -10,7 +10,7 @@ class BookPage extends StatefulWidget {
 }
 
 class _BookPageState extends State<BookPage> {
-  var _duration = const Duration(seconds: 100);
+  var _duration = const Duration(seconds: 1);
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:untitled/controller/router/router_util.dart';
 import 'package:untitled/controller/store/index.dart';
 import 'package:untitled/model/config_state_model.dart';
@@ -27,6 +28,15 @@ class MainAppState extends State<MainApp> {
                   primaryColor: Colors.green
               ),
             home: MyHomePage(),
+            //配置两个国际化的参数
+            localizationsDelegates: [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate
+            ],
+            supportedLocales: [
+              const Locale("zh", "CH"),
+              //const Locale("en", "US")
+            ],
           );
         }
     );
