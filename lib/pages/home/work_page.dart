@@ -88,6 +88,7 @@ class _WorkPageState extends State<WorkPage> {
     WorkItemModel workItem5 = new WorkItemModel(pageName:HTML_PAGE,pageTitle:"05 内接html页面");
     WorkItemModel workItem6 = new WorkItemModel(pageName:HTML_OUT_PAGE,pageTitle:"06 外接html页面");
     WorkItemModel workItem7 = new WorkItemModel(pageName:SHAPE_PAGE,pageTitle:"07 形状页面");
+    WorkItemModel workItem8 = new WorkItemModel(pageName:CHOICE_PAGE,pageTitle:"08 选择页面");
     workItemLists.add(workItem1);
     workItemLists.add(workItem2);
     workItemLists.add(workItem3);
@@ -95,6 +96,7 @@ class _WorkPageState extends State<WorkPage> {
     workItemLists.add(workItem5);
     workItemLists.add(workItem6);
     workItemLists.add(workItem7);
+    workItemLists.add(workItem8);
   }
 
 }

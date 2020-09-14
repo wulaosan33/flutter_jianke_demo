@@ -55,6 +55,8 @@ dependencies:
   #在 Flutter 1.17 发布大会上，Flutter 团队还发布了新的 Animations 软件包，
   #该软件包提供了实现新的 Material motion 规范的预构建动画。该软件包并不是内置的，而是第三方插件的形式。
   animations: ^1.1.1
+  #日期时间格式 另外一个库
+  date_format: any
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

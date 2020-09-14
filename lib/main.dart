@@ -31,7 +31,8 @@ class MainAppState extends State<MainApp> {
             //配置两个国际化的参数
             localizationsDelegates: [
               GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate
             ],
             supportedLocales: [
               const Locale("zh", "CH"),
