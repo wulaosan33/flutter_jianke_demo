@@ -6,6 +6,7 @@ import 'package:untitled/controller/router/router_item.dart';
 import 'package:untitled/pages/common/common_parent_page.dart';
 import 'package:untitled/pages/home/home_page.dart';
 import 'package:untitled/pages/home/theme/theme_page.dart';
+import 'package:untitled/pages/work/alert_page.dart';
 import 'package:untitled/pages/work/book_page.dart';
 import 'package:untitled/pages/work/bottom_page.dart';
 import 'package:untitled/pages/work/choice_page.dart';
@@ -38,6 +39,8 @@ final String HTML_OUT_PAGE = "/htmlOutPage/";
 final String SHAPE_PAGE = "/shapePage/";
 //选择页面
 final String CHOICE_PAGE = "/choicePage/";
+//弹窗页面
+final String ALERT_PAGE = "/alertPage/";
 
 class RouterUtil {
   static Router router = new Router();
@@ -52,6 +55,7 @@ class RouterUtil {
     RouterItem(HTML_OUT_PAGE, HtmlOutPage(), routerTitle: "外接html页面"),
     RouterItem(SHAPE_PAGE, ShapePage(), routerTitle:"形状页面"),
     RouterItem(CHOICE_PAGE, ChoicePage(), routerTitle:"选择页面"),
+    RouterItem(ALERT_PAGE, AlertPage(), routerTitle:"弹窗页面"),
   ];
 
   /// 跳转到系统路由

@@ -214,7 +214,6 @@ class _ChoicePageState extends State<ChoicePage> {
             ],
           )
         ],
-
       ),
     );
   }
@@ -232,16 +231,13 @@ class _ChoicePageState extends State<ChoicePage> {
       initialDate: selectDateTime,
       lastDate: DateTime(2100),
     );
-
     if (dateTime == null) {
       return;
     }
-
 //    MaterialLocalizations localizations = MaterialLocalizations.of(context);
 //    String formattedTime = localizations.formatFullDate(dateTime);
 //    print("formattedTime");
 //    print("formattedTime = $formattedTime");
-
     setState(() {
       selectDateTime = dateTime;
     });

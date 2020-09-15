@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/controller/router/router_util.dart';
-import 'package:untitled/pages/work/html_page.dart';
 import 'package:untitled/widgets/work_item_widget.dart';
 import 'package:untitled/model/work_item_model.dart';
 
@@ -89,6 +88,7 @@ class _WorkPageState extends State<WorkPage> {
     WorkItemModel workItem6 = new WorkItemModel(pageName:HTML_OUT_PAGE,pageTitle:"06 外接html页面");
     WorkItemModel workItem7 = new WorkItemModel(pageName:SHAPE_PAGE,pageTitle:"07 形状页面");
     WorkItemModel workItem8 = new WorkItemModel(pageName:CHOICE_PAGE,pageTitle:"08 选择页面");
+    WorkItemModel workItem9 = new WorkItemModel(pageName:ALERT_PAGE,pageTitle:"09 弹窗页面");
     workItemLists.add(workItem1);
     workItemLists.add(workItem2);
     workItemLists.add(workItem3);
@@ -97,6 +97,7 @@ class _WorkPageState extends State<WorkPage> {
     workItemLists.add(workItem6);
     workItemLists.add(workItem7);
     workItemLists.add(workItem8);
+    workItemLists.add(workItem9);
   }
 
 }
