@@ -61,8 +61,7 @@ class _WorkPageState extends State<WorkPage> {
 
   _workPageBody(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+      body: ListView(
         children: _getWorkItem(context),
       ),
     );
@@ -89,6 +88,8 @@ class _WorkPageState extends State<WorkPage> {
     WorkItemModel workItem7 = new WorkItemModel(pageName:SHAPE_PAGE,pageTitle:"07 形状页面");
     WorkItemModel workItem8 = new WorkItemModel(pageName:CHOICE_PAGE,pageTitle:"08 选择页面");
     WorkItemModel workItem9 = new WorkItemModel(pageName:ALERT_PAGE,pageTitle:"09 弹窗页面");
+    WorkItemModel workItem10 = new WorkItemModel(pageName:WATCH_PAGE,pageTitle:"10 条目浏览页面");
+    WorkItemModel workItem11 = new WorkItemModel(pageName:WATCH_BY_PAGE_PAGE,pageTitle:"11 条目分页浏览页面");
     workItemLists.add(workItem1);
     workItemLists.add(workItem2);
     workItemLists.add(workItem3);
@@ -98,6 +99,8 @@ class _WorkPageState extends State<WorkPage> {
     workItemLists.add(workItem7);
     workItemLists.add(workItem8);
     workItemLists.add(workItem9);
+    workItemLists.add(workItem10);
+    workItemLists.add(workItem11);
   }
 
 }

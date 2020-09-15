@@ -68,6 +68,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  #这两个是dev的，不要放到上面去了哦
+  build_runner: ^1.10.0
+  json_serializable: any
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -14,6 +14,8 @@ import 'package:untitled/pages/work/html_out_page.dart';
 import 'package:untitled/pages/work/shape_page.dart';
 import 'package:untitled/pages/work/text_row_space_page.dart';
 import 'package:untitled/pages/work/html_page.dart';
+import 'package:untitled/pages/work/watch_byPage_page.dart';
+import 'package:untitled/pages/work/watch_page.dart';
 import 'package:untitled/provider/provider_config.dart';
 import 'package:untitled/utils/common_tool.dart';
 import 'package:untitled/utils/log_util.dart';
@@ -41,6 +43,10 @@ final String SHAPE_PAGE = "/shapePage/";
 final String CHOICE_PAGE = "/choicePage/";
 //弹窗页面
 final String ALERT_PAGE = "/alertPage/";
+//条目浏览选择
+final String WATCH_PAGE = "/watchPage/";
+//条目分页查看
+final String WATCH_BY_PAGE_PAGE = "/watchByPagePage/";
 
 class RouterUtil {
   static Router router = new Router();
@@ -56,6 +62,8 @@ class RouterUtil {
     RouterItem(SHAPE_PAGE, ShapePage(), routerTitle:"形状页面"),
     RouterItem(CHOICE_PAGE, ChoicePage(), routerTitle:"选择页面"),
     RouterItem(ALERT_PAGE, AlertPage(), routerTitle:"弹窗页面"),
+    RouterItem(WATCH_PAGE, WatchPage(), routerTitle:"条目浏览页面"),
+    RouterItem(WATCH_BY_PAGE_PAGE, WatchByPagePage(), routerTitle:"条目分页浏览页面"),
   ];
 
   /// 跳转到系统路由

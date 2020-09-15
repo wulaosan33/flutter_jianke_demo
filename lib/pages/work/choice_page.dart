@@ -18,6 +18,10 @@ class _ChoicePageState extends State<ChoicePage> {
   var _Switch_value = false;
   var _Switch_value_lite = false;
   double _Slider_value = 0.0;
+  List _del_list = ["1", "2", "3", "4", "5"];
+  List _chick_list = ["1", "2", "3", "4", "5"];
+  Set _much_choice_list = Set();
+  var selectIndex = -1;
 
   DateTime selectDateTime = DateTime.now();
   TimeOfDay selectTime = TimeOfDay.now();
@@ -211,6 +215,151 @@ class _ChoicePageState extends State<ChoicePage> {
                 formatTimeOfDayalUse24Hour(selectTime, context),
 //           DateTime.fromMillisecondsSinceEpoch(selectDateTime.millisecondsSinceEpoch).toString(),
               ),
+              blankBox(),
+              Wrap(
+                spacing: 20,
+                runSpacing: 10,
+                children: <Widget>[
+                  Chip(
+                    label: Text("aaa"),
+                    //deleteIconColor: Colors.red,
+                    //onDeleted: () {},
+                  ),
+                  Chip(
+                    label: Text("aaaaaaaaa"),
+                    /// 删除icon
+                     deleteIcon: Icon(Icons.delete),
+                    deleteIconColor: Colors.red,
+                    onDeleted: () {},
+                  ),
+                  Chip(
+                    label: Text("aaaaaaaaaaa"),
+                    /// 可移动图标
+                    avatar: CircleAvatar(
+                      backgroundColor: Colors.red,
+//                  child: Text("头"),
+                      backgroundImage: AssetImage("assets/images/headIcon.png"),
+                    ),
+                    /// 删除icon
+                    deleteIcon: Icon(Icons.delete),
+                    deleteIconColor: Colors.red,
+                    onDeleted: () {},
+                  ),
+                  /// 可以控制左对齐
+                  Container()
+                ],
+              ),
+              blankBox(),
+              Text("删除"),
+              Wrap(
+//            crossAxisAlignment: WrapCrossAlignment.end,
+                spacing: 10,
+                runSpacing: 10,
+                children: _del_list.map((text) {
+                  return Chip(
+                    label: Text(text),
+                    avatar: CircleAvatar(
+                  backgroundColor: Colors.red,
+                  child: Text("A"),
+                      backgroundImage: AssetImage("assets/images/headIcon.png"),
+                    ),
+                    /// 删除icon
+                //deleteIcon: Icon(Icons.delete),
+                    deleteIconColor: Colors.red,
+                    onDeleted: () {
+                      setState(() {
+                        _del_list.remove(text);
+                      });
+                    },
+                  );
+                }).toList(),
+              ),
+              blankBox(),
+              ///使用chip组件在没有定义删除动作,且没有定义icon的时候,后面的icon不会出现
+              Text("点击"),
+              Wrap(
+//            crossAxisAlignment: WrapCrossAlignment.end,
+                spacing: 10,
+                runSpacing: 10,
+                children: _chick_list.map((text) {
+                  return ActionChip(
+                    label: Text(text),
+                    avatar: CircleAvatar(
+//                  backgroundColor: Colors.red,
+//                  child: Text("A"),
+                      backgroundImage: AssetImage("assets/images/headIcon.png"),
+                    ),
+                    onPressed: () {},
+                  );
+                }).toList(),
+              ),
+              blankBox(),
+              Text("多选"),
+              Wrap(
+//            crossAxisAlignment: WrapCrossAlignment.end,
+                spacing: 10,
+                runSpacing: 10,
+                children: _chick_list.map((text) {
+                  return FilterChip(
+                    selected: _much_choice_list.contains(text),
+                    onSelected: (value) {
+                      debugPrint("value = $value");
+                      setState(() {
+                        if (_much_choice_list.contains(text)) {
+                          _much_choice_list.remove(text);
+                        } else {
+                          _much_choice_list.add(text);
+                        }
+                      });
+                    },
+                    label: Text(text),
+                  );
+                }).toList(),
+              ),
+              blankBox(),
+              Text("多选方式2"),
+              Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                children: _chick_list.map((text) {
+                  return ChoiceChip(
+                    selected: _much_choice_list.contains(text),
+                    onSelected: (value) {
+                      debugPrint("value = $value");
+                      setState(() {
+                        if (_much_choice_list.contains(text)) {
+                          _much_choice_list.remove(text);
+                        } else {
+                          _much_choice_list.add(text);
+                        }
+                      });
+                    },
+                    label: Text(text),
+                  );
+                }).toList(),
+              ),
+              blankBox(),
+              Text("单选"),
+              Wrap(
+                spacing: 10,
+                runSpacing: 10,
+
+                /// 遍历下标 _list.asMap().keys.map 变量方式二
+                children: _chick_list.asMap().keys.map((index) {
+                  var text = _chick_list[index];
+                  return ChoiceChip(
+                    selected: selectIndex == index,
+                    onSelected: (value) {
+                      debugPrint("value = $value");
+                      setState(() {
+                        selectIndex = index;
+                      });
+                    },
+                    label: Text(text),
+                  );
+                }).toList(),
+              ),
+              blankBox(),
             ],
           )
         ],
