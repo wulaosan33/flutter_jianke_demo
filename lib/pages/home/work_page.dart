@@ -90,6 +90,7 @@ class _WorkPageState extends State<WorkPage> {
     WorkItemModel workItem9 = new WorkItemModel(pageName:ALERT_PAGE,pageTitle:"09 弹窗页面");
     WorkItemModel workItem10 = new WorkItemModel(pageName:WATCH_PAGE,pageTitle:"10 条目浏览页面");
     WorkItemModel workItem11 = new WorkItemModel(pageName:WATCH_BY_PAGE_PAGE,pageTitle:"11 条目分页浏览页面");
+    WorkItemModel workItem12 = new WorkItemModel(pageName:WATCH_BY_CARD_PAGE,pageTitle:"12 条目卡片浏览页面");
     workItemLists.add(workItem1);
     workItemLists.add(workItem2);
     workItemLists.add(workItem3);
@@ -101,6 +102,7 @@ class _WorkPageState extends State<WorkPage> {
     workItemLists.add(workItem9);
     workItemLists.add(workItem10);
     workItemLists.add(workItem11);
+    workItemLists.add(workItem12);
   }
 
 }
