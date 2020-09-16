@@ -91,6 +91,10 @@ class _WorkPageState extends State<WorkPage> {
     WorkItemModel workItem10 = new WorkItemModel(pageName:WATCH_PAGE,pageTitle:"10 条目浏览页面");
     WorkItemModel workItem11 = new WorkItemModel(pageName:WATCH_BY_PAGE_PAGE,pageTitle:"11 条目分页浏览页面");
     WorkItemModel workItem12 = new WorkItemModel(pageName:WATCH_BY_CARD_PAGE,pageTitle:"12 条目卡片浏览页面");
+    WorkItemModel workItem13 = new WorkItemModel(pageName:STEP_PAGE,pageTitle:"13 步骤页面");
+    WorkItemModel workItem14 = new WorkItemModel(pageName:INHERIT_PAGE,pageTitle:"14 inherit页面");
+    WorkItemModel workItem15 = new WorkItemModel(pageName:STREAM_PAGE,pageTitle:"15 stream页面");
+    WorkItemModel workItem16 = new WorkItemModel(pageName:RXDART_PAGE,pageTitle:"16 rxDart页面");
     workItemLists.add(workItem1);
     workItemLists.add(workItem2);
     workItemLists.add(workItem3);
@@ -103,6 +107,10 @@ class _WorkPageState extends State<WorkPage> {
     workItemLists.add(workItem10);
     workItemLists.add(workItem11);
     workItemLists.add(workItem12);
+    workItemLists.add(workItem13);
+    workItemLists.add(workItem14);
+    workItemLists.add(workItem15);
+    workItemLists.add(workItem16);
   }
 
 }

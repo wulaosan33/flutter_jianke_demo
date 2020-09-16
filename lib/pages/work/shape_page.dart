@@ -16,7 +16,7 @@ class _ShapePageState extends State<ShapePage> {
         title: Text('形状'),
       ),
       body: ListView(
-
+        children: [],
       ),
     );
   }

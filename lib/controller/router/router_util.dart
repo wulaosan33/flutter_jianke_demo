@@ -11,7 +11,11 @@ import 'package:untitled/pages/work/book_page.dart';
 import 'package:untitled/pages/work/bottom_page.dart';
 import 'package:untitled/pages/work/choice_page.dart';
 import 'package:untitled/pages/work/html_out_page.dart';
+import 'package:untitled/pages/work/inherit_page.dart';
+import 'package:untitled/pages/work/rxdart_page.dart';
 import 'package:untitled/pages/work/shape_page.dart';
+import 'package:untitled/pages/work/step_page.dart';
+import 'package:untitled/pages/work/stream_page.dart';
 import 'package:untitled/pages/work/text_row_space_page.dart';
 import 'package:untitled/pages/work/html_page.dart';
 import 'package:untitled/pages/work/watch_byCard_page.dart';
@@ -50,6 +54,14 @@ final String WATCH_PAGE = "/watchPage/";
 final String WATCH_BY_PAGE_PAGE = "/watchByPagePage/";
 //条目卡片查看
 final String WATCH_BY_CARD_PAGE = "/watchByCardPage/";
+//步骤
+final String STEP_PAGE = "/stepPage/";
+//inherit
+final String INHERIT_PAGE = "/inheritPage/";
+//stream
+final String STREAM_PAGE = "/streamPage/";
+//rxDart
+final String RXDART_PAGE = "/rxDartPage/";
 
 class RouterUtil {
   static Router router = new Router();
@@ -68,6 +80,10 @@ class RouterUtil {
     RouterItem(WATCH_PAGE, WatchPage(), routerTitle:"条目浏览页面"),
     RouterItem(WATCH_BY_PAGE_PAGE, WatchByPagePage(), routerTitle:"条目分页浏览页面"),
     RouterItem(WATCH_BY_CARD_PAGE, WatchByCardPage(), routerTitle:"条目卡片浏览页面"),
+    RouterItem(STEP_PAGE, StepPage(), routerTitle:"条目卡片浏览页面"),
+    RouterItem(INHERIT_PAGE, InheritPage(), routerTitle:"inherit页面"),
+    RouterItem(STREAM_PAGE, StreamPage(), routerTitle:"stream页面"),
+    RouterItem(RXDART_PAGE, RxDartPage(), routerTitle:"rxDart页面"),
   ];
 
   /// 跳转到系统路由
