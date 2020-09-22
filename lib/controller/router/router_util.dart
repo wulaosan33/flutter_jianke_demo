@@ -7,8 +7,10 @@ import 'package:untitled/pages/common/common_parent_page.dart';
 import 'package:untitled/pages/home/home_page.dart';
 import 'package:untitled/pages/home/theme/theme_page.dart';
 import 'package:untitled/pages/work/alert_page.dart';
+import 'package:untitled/pages/work/bloc_page.dart';
 import 'package:untitled/pages/work/book_page.dart';
 import 'package:untitled/pages/work/bottom_page.dart';
+import 'package:untitled/pages/work/builder_page.dart';
 import 'package:untitled/pages/work/choice_page.dart';
 import 'package:untitled/pages/work/html_out_page.dart';
 import 'package:untitled/pages/work/inherit_page.dart';
@@ -62,6 +64,10 @@ final String INHERIT_PAGE = "/inheritPage/";
 final String STREAM_PAGE = "/streamPage/";
 //rxDart
 final String RXDART_PAGE = "/rxDartPage/";
+//bloc
+final String BLOC_PAGE = "/blocPage/";
+//all_builder
+final String BUILDER_PAGE = "/builderPage/";
 
 class RouterUtil {
   static Router router = new Router();
@@ -84,6 +90,8 @@ class RouterUtil {
     RouterItem(INHERIT_PAGE, InheritPage(), routerTitle:"inherit页面"),
     RouterItem(STREAM_PAGE, StreamPage(), routerTitle:"stream页面"),
     RouterItem(RXDART_PAGE, RxDartPage(), routerTitle:"rxDart页面"),
+    RouterItem(BLOC_PAGE, BlocPage(), routerTitle:"bloc页面"),
+    RouterItem(BUILDER_PAGE, BuilderPage(), routerTitle:"builder页面"),
   ];
 
   /// 跳转到系统路由
