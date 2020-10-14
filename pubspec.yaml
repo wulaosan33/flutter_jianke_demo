@@ -61,6 +61,10 @@ dependencies:
   image_picker: ^0.6.1
   #inherit
   scoped_model: any
+  # 包装NSUserDefaults（在iOS上）和SharedPreferences（在Android上），
+  #为简单数据提供持久存储. 数据异步保存到磁盘.
+  #这两个平台都不能保证在返回后将写操作持久化到磁盘，并且该插件不得用于存储关键数据.
+  shared_preferences: ^0.5.8
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

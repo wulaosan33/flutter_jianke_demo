@@ -7,13 +7,16 @@ import 'package:untitled/pages/common/common_parent_page.dart';
 import 'package:untitled/pages/home/home_page.dart';
 import 'package:untitled/pages/home/theme/theme_page.dart';
 import 'package:untitled/pages/work/alert_page.dart';
+import 'package:untitled/pages/work/animation_page.dart';
 import 'package:untitled/pages/work/bloc_page.dart';
 import 'package:untitled/pages/work/book_page.dart';
 import 'package:untitled/pages/work/bottom_page.dart';
 import 'package:untitled/pages/work/builder_page.dart';
+import 'package:untitled/pages/work/channel_page.dart';
 import 'package:untitled/pages/work/choice_page.dart';
 import 'package:untitled/pages/work/html_out_page.dart';
 import 'package:untitled/pages/work/inherit_page.dart';
+import 'package:untitled/pages/work/local_save_page.dart';
 import 'package:untitled/pages/work/rxdart_page.dart';
 import 'package:untitled/pages/work/shape_page.dart';
 import 'package:untitled/pages/work/step_page.dart';
@@ -68,6 +71,12 @@ final String RXDART_PAGE = "/rxDartPage/";
 final String BLOC_PAGE = "/blocPage/";
 //all_builder
 final String BUILDER_PAGE = "/builderPage/";
+//动画页面
+final String ANIMATION_PAGE = "/animationPage/";
+//本地存储页面
+final String LOCALSAVE_PAGE = "/localSavePage/";
+//本地存储页面
+final String CHANNEL_PAGE = "/channelPage/";
 
 class RouterUtil {
   static Router router = new Router();
@@ -92,6 +101,9 @@ class RouterUtil {
     RouterItem(RXDART_PAGE, RxDartPage(), routerTitle:"rxDart页面"),
     RouterItem(BLOC_PAGE, BlocPage(), routerTitle:"bloc页面"),
     RouterItem(BUILDER_PAGE, BuilderPage(), routerTitle:"builder页面"),
+    RouterItem(ANIMATION_PAGE, AnimationPage(), routerTitle:"动画页面"),
+    RouterItem(LOCALSAVE_PAGE, LocalSavePage(), routerTitle:"本地存储页面"),
+    RouterItem(CHANNEL_PAGE, ChannelPage(), routerTitle:"通道页面"),
   ];
 
   /// 跳转到系统路由
