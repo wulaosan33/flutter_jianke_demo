@@ -100,6 +100,9 @@ class _WorkPageState extends State<WorkPage> {
     WorkItemModel workItem19 = new WorkItemModel(pageName:ANIMATION_PAGE,pageTitle:"19 动画页面");
     WorkItemModel workItem20 = new WorkItemModel(pageName:LOCALSAVE_PAGE,pageTitle:"20 本地存储页面");
     WorkItemModel workItem21 = new WorkItemModel(pageName:CHANNEL_PAGE,pageTitle:"21 通道页面");
+    WorkItemModel workItem22 = new WorkItemModel(pageName:MORE_TEXT_PAGE,pageTitle:"22 多文本页面");
+    WorkItemModel workItem23 = new WorkItemModel(pageName:SCREEN_ADAPT,pageTitle:"23 屏幕适配页面");
+    WorkItemModel workItem24 = new WorkItemModel(pageName:CAMERA_PAGE,pageTitle:"24 相机和相册选取页面");
     workItemLists.add(workItem1);
     workItemLists.add(workItem2);
     workItemLists.add(workItem3);
@@ -121,6 +124,9 @@ class _WorkPageState extends State<WorkPage> {
     workItemLists.add(workItem19);
     workItemLists.add(workItem20);
     workItemLists.add(workItem21);
+    workItemLists.add(workItem22);
+    workItemLists.add(workItem23);
+    workItemLists.add(workItem24);
   }
 
 }

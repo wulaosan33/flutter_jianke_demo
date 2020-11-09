@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+
 import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:untitled/controller/router/router_item.dart';
@@ -12,12 +13,15 @@ import 'package:untitled/pages/work/bloc_page.dart';
 import 'package:untitled/pages/work/book_page.dart';
 import 'package:untitled/pages/work/bottom_page.dart';
 import 'package:untitled/pages/work/builder_page.dart';
+import 'package:untitled/pages/work/camera_page.dart';
 import 'package:untitled/pages/work/channel_page.dart';
 import 'package:untitled/pages/work/choice_page.dart';
 import 'package:untitled/pages/work/html_out_page.dart';
 import 'package:untitled/pages/work/inherit_page.dart';
 import 'package:untitled/pages/work/local_save_page.dart';
+import 'package:untitled/pages/work/more_text_page.dart';
 import 'package:untitled/pages/work/rxdart_page.dart';
+import 'package:untitled/pages/work/screen_adapt.dart';
 import 'package:untitled/pages/work/shape_page.dart';
 import 'package:untitled/pages/work/step_page.dart';
 import 'package:untitled/pages/work/stream_page.dart';
@@ -75,11 +79,17 @@ final String BUILDER_PAGE = "/builderPage/";
 final String ANIMATION_PAGE = "/animationPage/";
 //本地存储页面
 final String LOCALSAVE_PAGE = "/localSavePage/";
-//本地存储页面
+//通道页面
 final String CHANNEL_PAGE = "/channelPage/";
+//本地存储页面
+final String MORE_TEXT_PAGE = "/moreTextPage/";
+//屏幕适配
+final String SCREEN_ADAPT = "/screenAdaptPage/";
+//相机和相册
+final String CAMERA_PAGE = "/cameraPage/";
 
 class RouterUtil {
-  static Router router = new Router();
+  static FluroRouter router = FluroRouter();
   static List<RouterItem> routerItemList = [
     RouterItem(MAIN, MyHomePage(), routerTitle: "系统级主页面"),
     RouterItem(THEME_PAGE, ThemePage(), routerTitle: "主题换肤页面"),
@@ -104,21 +114,19 @@ class RouterUtil {
     RouterItem(ANIMATION_PAGE, AnimationPage(), routerTitle:"动画页面"),
     RouterItem(LOCALSAVE_PAGE, LocalSavePage(), routerTitle:"本地存储页面"),
     RouterItem(CHANNEL_PAGE, ChannelPage(), routerTitle:"通道页面"),
+    RouterItem(MORE_TEXT_PAGE, MoreTextPage(), routerTitle:"通道页面"),
+    RouterItem(SCREEN_ADAPT, ScreenAdaptPage(), routerTitle:"屏幕适配页面"),
+    RouterItem(CAMERA_PAGE, CameraPage(), routerTitle:"相机和相册选取页面"),
   ];
 
   /// 跳转到系统路由
-  static Future navigateTo(BuildContext context, String routerPath,
+  static void navigateTo(BuildContext context, String routerPath,
       {bool replace = false, bool clearStack = false}) async {
-
-    Completer completer = Completer();
-    Future future = completer.future;
-
-    LogUtil.get().d("跳转到路径$routerPath");
-    future = router.navigateTo(context, routerPath,
-        transition: TransitionType.native,
-        replace: replace,
-        clearStack: clearStack);
-    return future;
+      LogUtil.get().d('跳转到路径$routerPath');
+      await router.navigateTo(context, routerPath,
+          transition: TransitionType.cupertino,
+          replace: replace,
+          clearStack: clearStack);
   }
 
   ///返回上个页面
@@ -170,7 +178,7 @@ class RouterUtil {
     routerItemList.forEach((RouterItem item) {
       if (item.widget is ParamStatefulWidget) {
         //LogUtil.get().i("开始添加简单参数路由信息${item.routerTitle} + ${item.routerPath}");
-        router.define(item.routerPath + ":params",
+         router.define(item.routerPath + ":params",
             handler: ParamHandler(item.widget).getHandler());
       } else if (item.widget is ObjectStatefulWidget) {
         //LogUtil.get().i("开始添加对象参数路由信息${item.routerTitle} + ${item.routerPath}");

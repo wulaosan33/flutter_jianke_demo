@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class ShapePage extends StatefulWidget {
   @override
@@ -16,7 +17,9 @@ class _ShapePageState extends State<ShapePage> {
         title: Text('形状'),
       ),
       body: ListView(
-        children: [],
+        children: [
+
+        ],
       ),
     );
   }
