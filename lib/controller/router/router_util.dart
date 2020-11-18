@@ -16,8 +16,10 @@ import 'package:untitled/pages/work/builder_page.dart';
 import 'package:untitled/pages/work/camera_page.dart';
 import 'package:untitled/pages/work/channel_page.dart';
 import 'package:untitled/pages/work/choice_page.dart';
+import 'package:untitled/pages/work/dismissible_page.dart';
 import 'package:untitled/pages/work/html_out_page.dart';
 import 'package:untitled/pages/work/inherit_page.dart';
+import 'package:untitled/pages/work/lateral_spreads_page.dart';
 import 'package:untitled/pages/work/local_save_page.dart';
 import 'package:untitled/pages/work/more_text_page.dart';
 import 'package:untitled/pages/work/rxdart_page.dart';
@@ -87,6 +89,10 @@ final String MORE_TEXT_PAGE = "/moreTextPage/";
 final String SCREEN_ADAPT = "/screenAdaptPage/";
 //相机和相册
 final String CAMERA_PAGE = "/cameraPage/";
+//侧滑
+final String LATERAL_SPREADS_PAGE = "/lateralSpreadsPage/";
+//侧滑删除
+final String DISMISSIBLE_PAGE = "/dismissiblePage/";
 
 class RouterUtil {
   static FluroRouter router = FluroRouter();
@@ -117,6 +123,8 @@ class RouterUtil {
     RouterItem(MORE_TEXT_PAGE, MoreTextPage(), routerTitle:"通道页面"),
     RouterItem(SCREEN_ADAPT, ScreenAdaptPage(), routerTitle:"屏幕适配页面"),
     RouterItem(CAMERA_PAGE, CameraPage(), routerTitle:"相机和相册选取页面"),
+    RouterItem(LATERAL_SPREADS_PAGE, LateralSpreadsPage(), routerTitle:"侧滑页面"),
+    RouterItem(DISMISSIBLE_PAGE, DismissiblePage(), routerTitle:"侧滑删除页面"),
   ];
 
   /// 跳转到系统路由

@@ -684,6 +684,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  slide_item:
+    dependency: "direct main"
+    description:
+      name: slide_item
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.8"
   source_gen:
     dependency: transitive
     description:
