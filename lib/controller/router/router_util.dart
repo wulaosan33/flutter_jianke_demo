@@ -22,6 +22,7 @@ import 'package:untitled/pages/work/inherit_page.dart';
 import 'package:untitled/pages/work/lateral_spreads_page.dart';
 import 'package:untitled/pages/work/local_save_page.dart';
 import 'package:untitled/pages/work/more_text_page.dart';
+import 'package:untitled/pages/work/other_listview_function.dart';
 import 'package:untitled/pages/work/rxdart_page.dart';
 import 'package:untitled/pages/work/screen_adapt.dart';
 import 'package:untitled/pages/work/shape_page.dart';
@@ -93,6 +94,8 @@ final String CAMERA_PAGE = "/cameraPage/";
 final String LATERAL_SPREADS_PAGE = "/lateralSpreadsPage/";
 //侧滑删除
 final String DISMISSIBLE_PAGE = "/dismissiblePage/";
+//ListView的一些功能
+final String OTHER_LISTVIEW_FUNCTION = "/otherListViewFunctionPage/";
 
 class RouterUtil {
   static FluroRouter router = FluroRouter();
@@ -125,6 +128,7 @@ class RouterUtil {
     RouterItem(CAMERA_PAGE, CameraPage(), routerTitle:"相机和相册选取页面"),
     RouterItem(LATERAL_SPREADS_PAGE, LateralSpreadsPage(), routerTitle:"侧滑页面"),
     RouterItem(DISMISSIBLE_PAGE, DismissiblePage(), routerTitle:"侧滑删除页面"),
+    RouterItem(OTHER_LISTVIEW_FUNCTION, OtherListViewFunctionPage(), routerTitle:"侧滑删除页面"),
   ];
 
   /// 跳转到系统路由

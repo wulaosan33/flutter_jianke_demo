@@ -357,6 +357,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.1.4"
+  image_gallery_saver:
+    dependency: "direct main"
+    description:
+      name: image_gallery_saver
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.6.1"
   image_picker:
     dependency: "direct main"
     description:
@@ -518,6 +525,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.9.2"
+  permission_handler:
+    dependency: "direct main"
+    description:
+      name: permission_handler
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.3.0"
   platform:
     dependency: transitive
     description:

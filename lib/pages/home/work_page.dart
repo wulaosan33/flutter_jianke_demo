@@ -105,6 +105,7 @@ class _WorkPageState extends State<WorkPage> {
     WorkItemModel workItem24 = new WorkItemModel(pageName:CAMERA_PAGE,pageTitle:"24 相机和相册选取页面");
     WorkItemModel workItem25 = new WorkItemModel(pageName:LATERAL_SPREADS_PAGE,pageTitle:"25 侧滑页面");
     WorkItemModel workItem26 = new WorkItemModel(pageName:DISMISSIBLE_PAGE,pageTitle:"26 侧滑删除页面");
+    WorkItemModel workItem27 = new WorkItemModel(pageName:OTHER_LISTVIEW_FUNCTION,pageTitle:"27 ListView的其他功能页面");
     workItemLists.add(workItem1);
     workItemLists.add(workItem2);
     workItemLists.add(workItem3);
@@ -131,6 +132,7 @@ class _WorkPageState extends State<WorkPage> {
     workItemLists.add(workItem24);
     workItemLists.add(workItem25);
     workItemLists.add(workItem26);
+    workItemLists.add(workItem27);
   }
 
 }
