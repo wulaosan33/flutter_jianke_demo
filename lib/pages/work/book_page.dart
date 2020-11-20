@@ -10,7 +10,7 @@ class BookPage extends StatefulWidget {
 }
 
 class _BookPageState extends State<BookPage> {
-  var _duration = const Duration(seconds: 1);
+  final _duration = const Duration(seconds: 1);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class _BookPageState extends State<BookPage> {
             crossAxisCount: 2, crossAxisSpacing: 2, mainAxisSpacing: 4),
         itemBuilder: (context, index) {
           return OpenContainer(
-            transitionDuration: _duration,//设置时间
+            transitionDuration: _duration, //设置时间
             //tappable:false,--------设为false则点击不会显示大图
             closedBuilder: (BuildContext _, VoidCallback openContainer) {
               return Container(

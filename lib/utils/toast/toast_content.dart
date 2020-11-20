@@ -56,10 +56,6 @@ class ToastContentState extends State<ToastContent>
   }
 }
 
-
-
-
-
 class LoadingDialog extends StatefulWidget {
   final String text;
 
@@ -99,25 +95,25 @@ class _LoadingDialogState extends State<LoadingDialog>
                   ///进度条
                   CircularProgressIndicator(
 
-                    /// 动画颜色
+                      /// 动画颜色
                       valueColor: ColorTween(
-                        begin: Colors.orange,
-                        end: Colors.black,
-                      ).animate(
-                        CurvedAnimation(
-                          parent: AnimationController(
-                            duration: Duration(seconds: 10),
+                    begin: Colors.orange,
+                    end: Colors.black,
+                  ).animate(
+                    CurvedAnimation(
+                      parent: AnimationController(
+                        duration: Duration(seconds: 10),
 
-                            /// 是否消耗其他资源
-                            vsync: this,
-                          ),
-                          curve: Interval(
-                            0.1,
-                            0.75,
+                        /// 是否消耗其他资源
+                        vsync: this,
+                      ),
+                      curve: Interval(
+                        0.1,
+                        0.75,
 //                        curve: Curves.fastLinearToSlowEaseIn,
-                          ),
-                        ),
-                      )),
+                      ),
+                    ),
+                  )),
 
                   /// 菊花
 //                  CupertinoActivityIndicator(),

@@ -1,11 +1,8 @@
-
 import 'package:rxdart/rxdart.dart';
 
 class CommonTools {
-
-  final refreshSubject = new PublishSubject <bool>();
-  final refreshWithDataSubject = new PublishSubject <DataModel>();
-
+  final refreshSubject = new PublishSubject<bool>();
+  final refreshWithDataSubject = new PublishSubject<DataModel>();
 
   factory CommonTools() => _getInstance();
   static CommonTools get instance => _getInstance();
@@ -16,17 +13,18 @@ class CommonTools {
     }
     return _instance;
   }
+
   //Router Map;
-  Map <String,String> routerMap;
-  void insertRouter(String key,String newValue){
-    if(routerMap == null){
+  Map<String, String> routerMap;
+  void insertRouter(String key, String newValue) {
+    if (routerMap == null) {
       routerMap = new Map();
     }
-    routerMap.update(key, (value) => newValue,ifAbsent: () => newValue);
-
+    routerMap.update(key, (value) => newValue, ifAbsent: () => newValue);
   }
-  String getRouterUrl(String key){
-    if(routerMap != null && routerMap.containsKey(key)){
+
+  String getRouterUrl(String key) {
+    if (routerMap != null && routerMap.containsKey(key)) {
       String path = routerMap[key];
       return path;
     }
@@ -34,11 +32,8 @@ class CommonTools {
   }
 
   CommonTools._internal() {
-
     print('初始化 CommonTools');
-
   }
-
 
   void dispose() {
     refreshSubject.close();
@@ -48,12 +43,13 @@ class CommonTools {
   String uploadImageFilePath;
 }
 
-enum DataModelType{
+enum DataModelType {
   uploadImage,
 }
+
 class DataModel {
-  DataModelType  dataType;
-  String  dataValue;
-  Map     dataMap;
-  DataModel({this.dataType,this.dataValue,this.dataMap});
+  DataModelType dataType;
+  String dataValue;
+  Map dataMap;
+  DataModel({this.dataType, this.dataValue, this.dataMap});
 }

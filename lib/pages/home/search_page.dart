@@ -36,8 +36,8 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     _scrollController.addListener(() {
-      double offset = _scrollController.position.pixels;
-      print("滑动距离$offset");
+      var offset = _scrollController.position.pixels;
+      print('滑动距离$offset');
 
       // 如果滑动到底部
       if (_scrollController.position.pixels ==
@@ -53,8 +53,8 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 
-  _searchPageAppBar() {
-    double tabHeight =
+  PreferredSize _searchPageAppBar() {
+    var tabHeight =
         MediaQueryData.fromWindow(window).padding.top + kToolbarHeight;
     return PreferredSize(
       preferredSize: Size.fromHeight(tabHeight),
@@ -86,6 +86,7 @@ class _SearchPageState extends State<SearchPage> {
       color: Colors.white,
       child: EasyRefresh(
         controller: _refreshController,
+
         /// 第三方刷新事件
         onRefresh: () async {
           dataList.clear();
@@ -93,9 +94,10 @@ class _SearchPageState extends State<SearchPage> {
           _loadData();
         },
         onLoad: () => _handleLoad(),
+
         ///项目国际化异常
-        header:JKClassicalHeader(),
-        footer:JKClassicalFooter(),
+        header: JKClassicalHeader(),
+        footer: JKClassicalFooter(),
         child: Column(
           children: <Widget>[
             ConverseListHeader(
@@ -104,8 +106,10 @@ class _SearchPageState extends State<SearchPage> {
             Container(
               child: ListView.separated(
                 controller: _scrollController,
+
                 /// 内容适配,无限尺寸,NeverScrollableScrollPhysics禁止滚动时候,需要自适应,不然不显示
                 shrinkWrap: true,
+
                 ///滑动类型设置 NeverScrollableScrollPhysics 禁止滑动
 //              physics: FixedExtentScrollPhysics(),
                 //确定每一个item的高度 会让item加载更加高效
@@ -158,7 +162,6 @@ class _SearchPageState extends State<SearchPage> {
         tempList.add(i);
       }
     } else if (pageIndex >= 4) {
-
     } else {
       for (int i = dataList.last; i < (dataList.last + 2); i++) {
         tempList.add(i);
@@ -167,22 +170,19 @@ class _SearchPageState extends State<SearchPage> {
 
     setState(() {
       dataList.addAll(tempList);
-    /*  _refreshController.finishLoad(
+      /*  _refreshController.finishLoad(
           success: true, noMore: (tempList.length == 0));*/
     });
   }
 
   //加载完成后延迟1s关闭加载完成窗.避免后续操作手势误触.与.finished不兼容
   void loadingBottomControl() {
-    Future.delayed(Duration(milliseconds: 1000), () {
-
-    });
+    Future.delayed(Duration(milliseconds: 1000), () {});
   }
 
   _handleLoad() async {
-      pageIndex++;
-      _loadData();
-      loadingBottomControl();
-    }
-
+    pageIndex++;
+    _loadData();
+    loadingBottomControl();
+  }
 }

@@ -48,7 +48,6 @@ class ErrorCode {
   }
 }
 
-
 /// iOS风格
 
 ///  alert 只有一个
@@ -66,7 +65,7 @@ Future<T> showCupertinoCertainAlert<T>({
         return CupertinoAlertDialog(
           title: (title != null && title.isNotEmpty) ? Text(title) : null,
           content:
-          (message != null && message.isNotEmpty) ? Text(message) : null,
+              (message != null && message.isNotEmpty) ? Text(message) : null,
           actions: <Widget>[
             _flatButton(
               certainText,
@@ -100,7 +99,7 @@ Future<bool> showCupertinoAlert({
         return CupertinoAlertDialog(
           title: (title != null && title.isNotEmpty) ? Text(title) : null,
           content:
-          (message != null && message.isNotEmpty) ? Text(message) : null,
+              (message != null && message.isNotEmpty) ? Text(message) : null,
           actions: <Widget>[
             CupertinoDialogAction(
               child: Text(
@@ -153,7 +152,7 @@ Future<T> showCupertinoSheet<T>({
         return CupertinoActionSheet(
           title: (title != null && title.isNotEmpty) ? Text(title) : null,
           message:
-          (message != null && message.isNotEmpty) ? Text(message) : null,
+              (message != null && message.isNotEmpty) ? Text(message) : null,
           cancelButton: CupertinoActionSheetAction(
             child: Text(cancelText),
             onPressed: () {

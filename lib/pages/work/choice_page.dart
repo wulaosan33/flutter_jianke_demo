@@ -1,8 +1,6 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
-
 
 class ChoicePage extends StatefulWidget {
   @override
@@ -10,7 +8,6 @@ class ChoicePage extends StatefulWidget {
 }
 
 class _ChoicePageState extends State<ChoicePage> {
-
   bool _checkbox_value = false;
   var _checkboxListTile_value = false;
   int _Radio_value = 0;
@@ -18,9 +15,9 @@ class _ChoicePageState extends State<ChoicePage> {
   var _Switch_value = false;
   var _Switch_value_lite = false;
   double _Slider_value = 0.0;
-  List _del_list = ["1", "2", "3", "4", "5"];
-  List _chick_list = ["1", "2", "3", "4", "5"];
-  Set _much_choice_list = Set();
+  var _del_list = ["1", "2", "3", "4", "5"];
+  var _chick_list = ["1", "2", "3", "4", "5"];
+  var _much_choice_list = Set();
   var selectIndex = -1;
 
   DateTime selectDateTime = DateTime.now();
@@ -53,7 +50,7 @@ class _ChoicePageState extends State<ChoicePage> {
               ),
               blankBox(),
               Checkbox(
-              //tristate: true,
+                  //tristate: true,
                   value: _checkbox_value,
                   activeColor: Colors.red,
                   checkColor: Colors.orange,
@@ -83,6 +80,7 @@ class _ChoicePageState extends State<ChoicePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Text("单选"),
+
                   /// 单选
                   Radio(
                     value: 0,
@@ -173,6 +171,7 @@ class _ChoicePageState extends State<ChoicePage> {
                 min: 0.0,
                 max: 10.0,
                 divisions: 10,
+
                 ///  divisions 才能有值
                 label: _Slider_value.toString(),
                 onChanged: (value) {
@@ -227,24 +226,28 @@ class _ChoicePageState extends State<ChoicePage> {
                   ),
                   Chip(
                     label: Text("aaaaaaaaa"),
+
                     /// 删除icon
-                     deleteIcon: Icon(Icons.delete),
+                    deleteIcon: Icon(Icons.delete),
                     deleteIconColor: Colors.red,
                     onDeleted: () {},
                   ),
                   Chip(
                     label: Text("aaaaaaaaaaa"),
+
                     /// 可移动图标
                     avatar: CircleAvatar(
                       backgroundColor: Colors.red,
 //                  child: Text("头"),
                       backgroundImage: AssetImage("assets/images/headIcon.png"),
                     ),
+
                     /// 删除icon
                     deleteIcon: Icon(Icons.delete),
                     deleteIconColor: Colors.red,
                     onDeleted: () {},
                   ),
+
                   /// 可以控制左对齐
                   Container()
                 ],
@@ -259,12 +262,13 @@ class _ChoicePageState extends State<ChoicePage> {
                   return Chip(
                     label: Text(text),
                     avatar: CircleAvatar(
-                  backgroundColor: Colors.red,
-                  child: Text("A"),
+                      backgroundColor: Colors.red,
+                      child: Text("A"),
                       backgroundImage: AssetImage("assets/images/headIcon.png"),
                     ),
+
                     /// 删除icon
-                //deleteIcon: Icon(Icons.delete),
+                    //deleteIcon: Icon(Icons.delete),
                     deleteIconColor: Colors.red,
                     onDeleted: () {
                       setState(() {
@@ -275,6 +279,7 @@ class _ChoicePageState extends State<ChoicePage> {
                 }).toList(),
               ),
               blankBox(),
+
               ///使用chip组件在没有定义删除动作,且没有定义icon的时候,后面的icon不会出现
               Text("点击"),
               Wrap(
@@ -367,7 +372,7 @@ class _ChoicePageState extends State<ChoicePage> {
     );
   }
 
-  Widget blankBox(){
+  Widget blankBox() {
     return Container(
       height: 20,
     );
@@ -410,7 +415,7 @@ class _ChoicePageState extends State<ChoicePage> {
   static String formatTimeOfDayalUse24Hour(TimeOfDay timeOfDay, context) {
     MaterialLocalizations localizations = MaterialLocalizations.of(context);
     String formattedTime =
-    localizations.formatTimeOfDay(timeOfDay, alwaysUse24HourFormat: true);
+        localizations.formatTimeOfDay(timeOfDay, alwaysUse24HourFormat: true);
     return formattedTime;
   }
 }

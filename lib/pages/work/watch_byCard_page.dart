@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/model/post_entity.dart';
@@ -9,7 +8,6 @@ class WatchByCardPage extends StatefulWidget {
 }
 
 class _WatchByCardPageState extends State<WatchByCardPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +23,7 @@ class _WatchByCardPageState extends State<WatchByCardPage> {
                 /// 按比例显示
                 AspectRatio(
                   aspectRatio: 16 / 9,
+
                   /// 圆角
                   child: ClipRRect(
                     borderRadius: BorderRadius.only(
@@ -48,6 +47,7 @@ class _WatchByCardPageState extends State<WatchByCardPage> {
                   padding: EdgeInsets.all(10),
                   child: Text(post.title),
                 ),
+
                 /// 统一设置button ,也可以单独写子内容
                 ButtonBarTheme(
                   data: ButtonBarThemeData(

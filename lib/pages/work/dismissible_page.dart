@@ -1,7 +1,5 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 
 class DismissiblePage extends StatefulWidget {
   @override
@@ -9,8 +7,7 @@ class DismissiblePage extends StatefulWidget {
 }
 
 class _DismissiblePageState extends State<DismissiblePage> {
-
-   final List<String> items = List.generate(20, (index) => index.toString());
+  final List<String> items = List.generate(20, (index) => index.toString());
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +29,7 @@ class _DismissiblePageState extends State<DismissiblePage> {
               items.removeAt(index);
               Scaffold.of(context)
                   .showSnackBar(SnackBar(content: Text("$item dismissed")));
-                setState(() {
-
-                });
+              setState(() {});
             },
             // Show a red background as the item is swiped away
             background: Container(color: Colors.red),
@@ -44,7 +39,4 @@ class _DismissiblePageState extends State<DismissiblePage> {
       ),
     );
   }
-
 }
-
-

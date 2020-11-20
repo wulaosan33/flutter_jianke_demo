@@ -16,12 +16,11 @@ class JKClassicalHeader extends ClassicalHeader {
 class JKClassicalFooter extends ClassicalFooter {
   JKClassicalFooter()
       : super(
-          loadText: '拉动加载',
-          noMoreText: '没有更多数据',
-          loadingText: '正在加载...',
-          loadReadyText: '释放加载',
-          loadedText: '加载完成',
-          infoText: '更新于 %T',
-          enableInfiniteLoad:false
-        );
+            loadText: '拉动加载',
+            noMoreText: '没有更多数据',
+            loadingText: '正在加载...',
+            loadReadyText: '释放加载',
+            loadedText: '加载完成',
+            infoText: '更新于 %T',
+            enableInfiniteLoad: false);
 }

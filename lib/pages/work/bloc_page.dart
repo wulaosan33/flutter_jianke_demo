@@ -1,9 +1,7 @@
-
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 
 ///InheritedWidget是Flutter的一个功能型的Widget基类，它能有效地将数据在当前Widget树中向它的子widget树传递
 class BlocPage extends StatefulWidget {
@@ -12,7 +10,6 @@ class BlocPage extends StatefulWidget {
 }
 
 class _BlocPageState extends State<BlocPage> {
-
   @override
   Widget build(BuildContext context) {
     return MyInheritedWidget(
@@ -38,7 +35,7 @@ class ConterHome extends StatefulWidget {
 class _ConterHome extends State<ConterHome> {
   @override
   Widget build(BuildContext context) {
-    ConterBloc _conterBloc = MyInheritedWidget.of(context).bloc;
+    var _conterBloc = MyInheritedWidget.of(context).bloc;
 
     return Center(
       child: StreamBuilder(
@@ -48,7 +45,7 @@ class _ConterHome extends State<ConterHome> {
         /// 获得输出流
         builder: (context, snapshot) {
           return ActionChip(
-            label: Text("${snapshot.data}"),
+            label: Text('${snapshot.data}'),
             onPressed: () {
               ///自点击加法
               _conterBloc.sink.add(1);

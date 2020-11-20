@@ -17,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
   PageController _pageController;
-  final List<Widget> _pages = [UserPage(),SearchPage(),  WorkPage()];
+  final List<Widget> _pages = [UserPage(), SearchPage(), WorkPage()];
 
   @override
   void initState() {
@@ -44,16 +44,16 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new PageView(
+      body: PageView(
         controller: _pageController,
         children: _pages,
         onPageChanged: (index) {
           _tabController.animateTo(index);
         },
       ),
-      bottomNavigationBar: new Material(
+      bottomNavigationBar: Material(
         color: Colors.green,
-        child: new TabBar(
+        child: TabBar(
           controller: _tabController,
           onTap: (index) {
             _pageController.animateToPage(index,
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage>
   }
 
   List<Widget> getTabs() {
-    List<Widget> widgets = [
+    var widgets = <Widget>[
       CustomTabBarItem("用户", Icons.rowing),
       CustomTabBarItem("发现", Icons.search),
       CustomTabBarItem("工作", Icons.monetization_on)

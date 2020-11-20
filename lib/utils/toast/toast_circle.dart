@@ -1,18 +1,16 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-
 class ToastCircle extends CustomPainter {
   final double progress;
   final double strokeWidth;
   final Color color;
   final Color fillColor;
-  const ToastCircle({
-    this.progress = 0, 
-    this.strokeWidth = 3,
-    this.color = Colors.grey,
-    this.fillColor = Colors.white
-  });
+  const ToastCircle(
+      {this.progress = 0,
+      this.strokeWidth = 3,
+      this.color = Colors.grey,
+      this.fillColor = Colors.white});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -25,7 +23,7 @@ class ToastCircle extends CustomPainter {
     final centerX = size.width * 0.5;
     final centerY = size.height * 0.5;
     final radius = diam / 2.0;
-    
+
     canvas.drawCircle(Offset(centerX, centerY), radius, paint);
     paint.color = this.fillColor;
     // draw in center

@@ -14,7 +14,6 @@ class BottomPage extends StatefulWidget {
 }
 
 class _BottomPageState extends State<BottomPage> {
-
   bool isOffstage = false;
   bool isVisibility = false;
   bool _isShow = true;
@@ -34,7 +33,7 @@ class _BottomPageState extends State<BottomPage> {
       appBar: AppBar(
         title: Text("按钮页面"),
       ),
-      body:ListView(
+      body: ListView(
         children: [
           FlatButton(
             child: Text('控制底部bar'),
@@ -57,27 +56,31 @@ class _BottomPageState extends State<BottomPage> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),),
+                      topRight: Radius.circular(20),
+                    ),
                   ),
                   builder: (context) {
                     return Container(
                         margin: EdgeInsets.only(left: 30),
-                        height:100,//对话框高度就是此高度
-                        child:ListView(
+                        height: 100, //对话框高度就是此高度
+                        child: ListView(
                           children: List.generate(20, (index) {
                             return Text('title - $index');
                           }).toList(),
-                        )
-                    );
+                        ));
                   });
             },
           ),
           blankBox(),
-          Image.asset(assetsOfImagePath('A171.jpg'), fit: BoxFit.fill,),
+          Image.asset(
+            assetsOfImagePath('A171.jpg'),
+            fit: BoxFit.fill,
+          ),
           blankBox(),
           Column(
             children: [
               Text('Expanded 等比分布,撑满剩余空间'),
+
               ///expand
               Row(
                 children: <Widget>[
@@ -95,6 +98,7 @@ class _BottomPageState extends State<BottomPage> {
                   //Text('尾部'),
                 ],
               ),
+
               ///expand---1:1:1等分
               Row(children: <Widget>[
                 Container(
@@ -135,6 +139,7 @@ class _BottomPageState extends State<BottomPage> {
                   ),
                 ),
               ]),
+
               ///expand为string,过长会截取.
               Row(
                 children: <Widget>[
@@ -204,9 +209,9 @@ class _BottomPageState extends State<BottomPage> {
           FlatButton(
             child: Text(dateChoice),
             onPressed: () {
-               _selectDateFunc().then((value) => dateChoice = value != null ? value.toString() : 'flutter日期选择');
-              setState(() {
-              });
+              _selectDateFunc().then((value) => dateChoice =
+                  value != null ? value.toString() : 'flutter日期选择');
+              setState(() {});
             },
             splashColor: Colors.red,
             color: Colors.green,
@@ -231,7 +236,7 @@ class _BottomPageState extends State<BottomPage> {
                   prefix: Text(' 姓名 '),
                   suffix: Text(' 结尾 '),
                   //keyboardType: TextInputType.numberWithOptions(decimal: true),
-                    keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.text,
                 ),
               ),
             ],
@@ -249,13 +254,16 @@ class _BottomPageState extends State<BottomPage> {
                         child: TextField(
                           /// 输入的文字
                           onChanged: (value) {},
+
                           ///输入完成后指向
                           onEditingComplete: () {
                             FocusScope.of(context).requestFocus(FocusNode());
                           },
                           maxLength: 11,
+
                           ///键盘类型
                           keyboardType: TextInputType.number,
+
                           /// 右下角 键盘类型
                           textInputAction: TextInputAction.send,
                           onSubmitted: (value) {
@@ -265,6 +273,7 @@ class _BottomPageState extends State<BottomPage> {
                             WhitelistingTextInputFormatter.digitsOnly, //只输入数字
                             //  PhoneTextInputFormatter.digitsOnly,
                           ],
+
                           ///输入文本的样式
                           style: TextStyle(
                             fontSize: 16.0,
@@ -281,21 +290,22 @@ class _BottomPageState extends State<BottomPage> {
                               fontSize: 16.0,
                               color: Colors.red,
                             ),
+
                             ///输入内容距离上下左右的距离 ，可通过这个属性来控制 TextField的高度
                             contentPadding: EdgeInsets.all(10.0),
                             border: OutlineInputBorder(
-                              //  borderRadius: BorderRadius.circular(15),
-                              //  borderSide: BorderSide.none,
-                            ),
+                                //  borderRadius: BorderRadius.circular(15),
+                                //  borderSide: BorderSide.none,
+                                ),
+
                             /// right 小组件
                             //suffixIcon:
                           ),
-                        )
-                    ),
+                        )),
                   ),
                   Expanded(
                     flex: 1,
-                    child:MaterialButton(
+                    child: MaterialButton(
                       padding: EdgeInsets.only(bottom: 25),
                       child: Text(
                         '获取验证码',
@@ -308,7 +318,6 @@ class _BottomPageState extends State<BottomPage> {
                       },
                     ),
                   )
-
                 ],
               ),
             ],
@@ -410,10 +419,12 @@ class _BottomPageState extends State<BottomPage> {
                     color: Colors.green,
                     textColor: Colors.white,
                   ),
+
                   /// 描边
                   OutlineButton(
                     child: Text('OutlineButton'),
                     onPressed: () {},
+
                     /// 点击高亮颜色
                     splashColor: Colors.orange,
                     color: Colors.red,
@@ -421,11 +432,19 @@ class _BottomPageState extends State<BottomPage> {
                       color: Colors.blue,
                     ),
                   ),
+
                   /// 描边
                   OutlineButton.icon(
-                    icon: Icon(Icons.add,color: Colors.black,),
-                    label: Text('OutlineButton.icon',style: TextStyle(color: Colors.black),),
+                    icon: Icon(
+                      Icons.add,
+                      color: Colors.black,
+                    ),
+                    label: Text(
+                      'OutlineButton.icon',
+                      style: TextStyle(color: Colors.black),
+                    ),
                     onPressed: () {},
+
                     /// 点击高亮颜色
                     color: Colors.red,
                     borderSide: BorderSide(
@@ -433,7 +452,8 @@ class _BottomPageState extends State<BottomPage> {
                     ),
                   ),
                 ],
-              ),],
+              ),
+            ],
           ),
           blankBox(),
           Column(
@@ -444,8 +464,7 @@ class _BottomPageState extends State<BottomPage> {
                 onSelected: (value) {
                   print('value = $value');
                 },
-                itemBuilder: (BuildContext context) =>
-                [
+                itemBuilder: (BuildContext context) => [
                   PopupMenuItem(
                     value: 1,
                     child: Text('1'),
@@ -460,76 +479,81 @@ class _BottomPageState extends State<BottomPage> {
           ),
           blankBox(),
           Column(
-           children: [
-             Text('自动换行的row--Wrap'),
-             Wrap(children: <Widget>[for (String item in tags) TagItem(item)]),
-           ],
+            children: [
+              Text('自动换行的row--Wrap'),
+              Wrap(children: <Widget>[for (String item in tags) TagItem(item)]),
+            ],
           ),
         ],
       ),
-        bottomNavigationBar: bottomBar(),
+      bottomNavigationBar: bottomBar(),
     );
   }
 
-  Widget blankBox(){
+  Widget blankBox() {
     return Container(
       height: 20,
     );
   }
 
-  Widget bottomBar(){
+  Widget bottomBar() {
     return StreamBuilder<bool>(
-      // 监听Stream，每次值改变的时候，更新Text中的内容
+        // 监听Stream，每次值改变的时候，更新Text中的内容
         stream: _streamController.stream,
+
         /// 第一次监听值
         initialData: _isShow,
         builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
           print('snapshot.data = ${snapshot?.data}');
           return BottomAppBar(
             color: Colors.red,
+
             /// 直接用_isShow 方便控制,比snapshot?.data 不知道为什么
-            child: (!_isShow) ? null : Container(
-              height: 50,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
-                ///交叉轴的布局方式，对于column来说就是水平方向的布局方式
-                crossAxisAlignment: CrossAxisAlignment.end,
-                verticalDirection: VerticalDirection.down,
-                children: <Widget>[
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      /// 充满 容器
-                      alignment: Alignment.center,
-                      color: Colors.orange,
-                      child: FlatButton(
-                        child: Text('底部按钮1'),
-                        onPressed: () async {
-                        },
-                      ),
+            child: (!_isShow)
+                ? null
+                : Container(
+                    height: 50,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+
+                      ///交叉轴的布局方式，对于column来说就是水平方向的布局方式
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      verticalDirection: VerticalDirection.down,
+                      children: <Widget>[
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            /// 充满 容器
+                            alignment: Alignment.center,
+                            color: Colors.orange,
+                            child: FlatButton(
+                              child: Text('底部按钮1'),
+                              onPressed: () async {},
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 1,
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            /// 充满 容器
+                            alignment: Alignment.center,
+                            color: Colors.orange,
+                            child: FlatButton(
+                              onPressed: () {},
+                              child: Text('底部按钮2'),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(
-                    width: 1,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      /// 充满 容器
-                      alignment: Alignment.center,
-                      color: Colors.orange,
-                      child: FlatButton(
-                        onPressed: () {},
-                        child: Text('底部按钮2'),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
             /// 切形状 自动根据被 重叠部分
-              shape: CircularNotchedRectangle(),
+            shape: CircularNotchedRectangle(),
           );
         });
   }
@@ -591,8 +615,6 @@ class _BottomPageState extends State<BottomPage> {
           );
         });
   }
-
-
 }
 
 class TagItem extends StatelessWidget {

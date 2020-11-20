@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,8 +6,8 @@ class AnimationPage extends StatefulWidget {
   _AnimationPageState createState() => _AnimationPageState();
 }
 
-class _AnimationPageState extends State<AnimationPage> with TickerProviderStateMixin{
-
+class _AnimationPageState extends State<AnimationPage>
+    with TickerProviderStateMixin {
   AnimationController _animationController;
 
   Animation _animation;
@@ -23,6 +22,7 @@ class _AnimationPageState extends State<AnimationPage> with TickerProviderStateM
   void initState() {
     // TODO: implement initState
     super.initState();
+
     /// 值只能是数,
     _animationController = AnimationController(
       duration: Duration(seconds: 3),
@@ -101,8 +101,7 @@ class _AnimationPageState extends State<AnimationPage> with TickerProviderStateM
         ),
       ),*/
 
-
-     /* body: Center(
+      /* body: Center(
         child: IconButton(
           icon: Icon(Icons.favorite),
           iconSize: _animationController.value,
@@ -187,7 +186,6 @@ class _AnimationPageState extends State<AnimationPage> with TickerProviderStateM
       ),
     );
   }
-
 }
 
 class AnimationHeader extends AnimatedWidget {
@@ -212,7 +210,7 @@ class AnimationHeader extends AnimatedWidget {
         switch (animationController.status) {
           case AnimationStatus.completed:
 
-          ///reverse 相反
+            ///reverse 相反
             animationController.reverse();
             break;
 

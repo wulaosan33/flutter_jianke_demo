@@ -30,7 +30,7 @@ class PostEntity extends Object {
     this.title,
     this.author,
     this.imageUrl,
-      this.index,
+    this.index,
   );
 
   factory PostEntity.fromJson(Map<String, dynamic> srcJson) =>
@@ -49,7 +49,7 @@ class PostEntity extends Object {
         'title': '内容-$index',
         'imageUrl': 'https://bing.ioliu.cn/v1/rand?key=b$index&w=640&h=360',
         'author': 'author-$index',
-        'index' : index.toString(),
+        'index': index.toString(),
       };
     });
     print('list == $list');

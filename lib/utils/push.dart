@@ -114,4 +114,3 @@ T pushNameOfArguments<T extends Object>({
 }) {
   return ModalRoute.of(context).settings.arguments;
 }
-

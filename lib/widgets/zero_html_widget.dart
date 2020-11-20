@@ -12,13 +12,13 @@ class ZeroHtmlWidget extends StatefulWidget {
 /// 加载网络的
 class _ZeroHtmlWidgetState extends State<ZeroHtmlWidget> {
   WebViewController _controller;
-  String _title = "webview";
+  String _title = 'webview';
   @override
   Widget build(BuildContext context) {
-    String url = widget.param;
+    var url = widget.param;
     return Scaffold(
       appBar: AppBar(
-        title: Text("$_title"),
+        title: Text('$_title'),
       ),
       body: SafeArea(
         child: WebView(
@@ -29,7 +29,7 @@ class _ZeroHtmlWidgetState extends State<ZeroHtmlWidget> {
             _controller = controller;
           },
           onPageFinished: (url) {
-            _controller.evaluateJavascript("document.title").then((result) {
+            _controller.evaluateJavascript('document.title').then((result) {
               setState(() {
                 _title = result;
               });
@@ -38,20 +38,20 @@ class _ZeroHtmlWidgetState extends State<ZeroHtmlWidget> {
           navigationDelegate: (NavigationRequest request) {
             print('request.url = ${request.url}');
 
-            if (request.url.startsWith("myapp://")) {
-              print("即将打开 ${request.url}");
+            if (request.url.startsWith('myapp://')) {
+              print('即将打开 ${request.url}');
 
               return NavigationDecision.prevent;
             }
             return NavigationDecision.navigate;
           },
-          javascriptChannels: <JavascriptChannel>[
+          javascriptChannels: <JavascriptChannel>{
             JavascriptChannel(
-                name: "share",
+                name: 'share',
                 onMessageReceived: (JavascriptMessage message) {
-                  print("参数： ${message.message}");
+                  print('参数： ${message.message}');
                 }),
-          ].toSet(),
+          },
         ),
       ),
     );

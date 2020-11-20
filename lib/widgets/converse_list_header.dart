@@ -26,7 +26,7 @@ class ConverseListHeader extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Image.asset(
-                "assets/images/Icon_Mac.png",
+                'assets/images/Icon_Mac.png',
                 width: 40,
                 height: 40,
                 color: Colors.blueAccent,
@@ -35,7 +35,7 @@ class ConverseListHeader extends StatelessWidget {
                 width: 10,
               ),
               Text(
-                this.showText,
+                showText,
                 style: TextStyle(fontSize: 17, color: Colors.white),
               )
             ],

@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:math';
 
@@ -17,9 +16,9 @@ class _BuilderPageState extends State<BuilderPage> {
   //box1
   var listNotifier = ValueNotifier<List<String>>([]);
   //赋予被监听值的初始值box2
-  ValueNotifier<int> _counterValueNotifier = ValueNotifier<int>(0);
+  final ValueNotifier<int> _counterValueNotifier = ValueNotifier<int>(0);
   //box3
-  StreamController<int> _streamController = StreamController<int>();
+  final StreamController<int> _streamController = StreamController<int>();
   int streamInt = 0;
   //box4 调用 //dynamic 类型自己定
   Future<List> _futureBuilderData() {
@@ -29,18 +28,22 @@ class _BuilderPageState extends State<BuilderPage> {
       return e;
     }).catchError((e) {});
   }
+
   Future demo1() async {
     await Future.delayed(Duration(seconds: 1));
     return 'A';
   }
+
   Future demo2() async {
     await Future.delayed(Duration(seconds: 2));
     return 'B';
   }
+
   Future demo3() async {
     await Future.delayed(Duration(seconds: 1));
     return 'C';
   }
+
   //box5
   BehaviorSubject<String> _behaviorSubject;
 
@@ -110,14 +113,13 @@ class _BuilderPageState extends State<BuilderPage> {
                       style: TextStyle(backgroundColor: Colors.orange)),
                 ),
                 FlatButton(
-                  color: Colors.grey,
-                  child: Text('加1'),
-                  // 点击的时候用 ValueNotifier 来更新值
-                  onPressed: (){
-                    _counterValueNotifier.value += 1 ;
-                    print(_counterValueNotifier.value);
-                  }
-                ),
+                    color: Colors.grey,
+                    child: Text('加1'),
+                    // 点击的时候用 ValueNotifier 来更新值
+                    onPressed: () {
+                      _counterValueNotifier.value += 1;
+                      print(_counterValueNotifier.value);
+                    }),
               ],
             ),
           ),
@@ -126,8 +128,9 @@ class _BuilderPageState extends State<BuilderPage> {
             child: Column(
               children: <Widget>[
                 StreamBuilder<int>(
-                  // 监听Stream，每次值改变的时候，更新Text中的内容
+                    // 监听Stream，每次值改变的时候，更新Text中的内容
                     stream: _streamController.stream,
+
                     /// 第一次监听值
                     initialData: streamInt,
                     builder:
@@ -199,7 +202,7 @@ class _BuilderPageState extends State<BuilderPage> {
                           behaviorSubject: _behaviorSubject,
                           callBack: (str) {
                             _behaviorSubject.add('$str >> ');
-                           // print(_behaviorSubject.value + "00000000000000");
+                            // print(_behaviorSubject.value + "00000000000000");
                           },
                         ));
                   },

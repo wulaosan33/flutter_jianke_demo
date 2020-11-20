@@ -1,9 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:untitled/utils/toast/toast_circle.dart';
 import 'package:untitled/utils/toast/toast_content.dart';
-
-
 
 const double kIconSize = 50;
 const Duration kDuration = const Duration(milliseconds: 150);

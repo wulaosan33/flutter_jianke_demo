@@ -17,6 +17,7 @@ import 'package:untitled/pages/work/camera_page.dart';
 import 'package:untitled/pages/work/channel_page.dart';
 import 'package:untitled/pages/work/choice_page.dart';
 import 'package:untitled/pages/work/dismissible_page.dart';
+import 'package:untitled/pages/work/event_page.dart';
 import 'package:untitled/pages/work/html_out_page.dart';
 import 'package:untitled/pages/work/inherit_page.dart';
 import 'package:untitled/pages/work/lateral_spreads_page.dart';
@@ -96,6 +97,8 @@ final String LATERAL_SPREADS_PAGE = "/lateralSpreadsPage/";
 final String DISMISSIBLE_PAGE = "/dismissiblePage/";
 //ListView的一些功能
 final String OTHER_LISTVIEW_FUNCTION = "/otherListViewFunctionPage/";
+//EventPage
+final String EVENT_PAGE = "/eventPage/";
 
 class RouterUtil {
   static FluroRouter router = FluroRouter();
@@ -108,37 +111,39 @@ class RouterUtil {
     RouterItem(BOTTOM_PAGE, BottomPage(), routerTitle: "按钮页面"),
     RouterItem(HTML_PAGE, HtmlPage(), routerTitle: "内接html页面"),
     RouterItem(HTML_OUT_PAGE, HtmlOutPage(), routerTitle: "外接html页面"),
-    RouterItem(SHAPE_PAGE, ShapePage(), routerTitle:"形状页面"),
-    RouterItem(CHOICE_PAGE, ChoicePage(), routerTitle:"选择页面"),
-    RouterItem(ALERT_PAGE, AlertPage(), routerTitle:"弹窗页面"),
-    RouterItem(WATCH_PAGE, WatchPage(), routerTitle:"条目浏览页面"),
-    RouterItem(WATCH_BY_PAGE_PAGE, WatchByPagePage(), routerTitle:"条目分页浏览页面"),
-    RouterItem(WATCH_BY_CARD_PAGE, WatchByCardPage(), routerTitle:"条目卡片浏览页面"),
-    RouterItem(STEP_PAGE, StepPage(), routerTitle:"条目卡片浏览页面"),
-    RouterItem(INHERIT_PAGE, InheritPage(), routerTitle:"inherit页面"),
-    RouterItem(STREAM_PAGE, StreamPage(), routerTitle:"stream页面"),
-    RouterItem(RXDART_PAGE, RxDartPage(), routerTitle:"rxDart页面"),
-    RouterItem(BLOC_PAGE, BlocPage(), routerTitle:"bloc页面"),
-    RouterItem(BUILDER_PAGE, BuilderPage(), routerTitle:"builder页面"),
-    RouterItem(ANIMATION_PAGE, AnimationPage(), routerTitle:"动画页面"),
-    RouterItem(LOCALSAVE_PAGE, LocalSavePage(), routerTitle:"本地存储页面"),
-    RouterItem(CHANNEL_PAGE, ChannelPage(), routerTitle:"通道页面"),
-    RouterItem(MORE_TEXT_PAGE, MoreTextPage(), routerTitle:"通道页面"),
-    RouterItem(SCREEN_ADAPT, ScreenAdaptPage(), routerTitle:"屏幕适配页面"),
-    RouterItem(CAMERA_PAGE, CameraPage(), routerTitle:"相机和相册选取页面"),
-    RouterItem(LATERAL_SPREADS_PAGE, LateralSpreadsPage(), routerTitle:"侧滑页面"),
-    RouterItem(DISMISSIBLE_PAGE, DismissiblePage(), routerTitle:"侧滑删除页面"),
-    RouterItem(OTHER_LISTVIEW_FUNCTION, OtherListViewFunctionPage(), routerTitle:"侧滑删除页面"),
+    RouterItem(SHAPE_PAGE, ShapePage(), routerTitle: "形状页面"),
+    RouterItem(CHOICE_PAGE, ChoicePage(), routerTitle: "选择页面"),
+    RouterItem(ALERT_PAGE, AlertPage(), routerTitle: "弹窗页面"),
+    RouterItem(WATCH_PAGE, WatchPage(), routerTitle: "条目浏览页面"),
+    RouterItem(WATCH_BY_PAGE_PAGE, WatchByPagePage(), routerTitle: "条目分页浏览页面"),
+    RouterItem(WATCH_BY_CARD_PAGE, WatchByCardPage(), routerTitle: "条目卡片浏览页面"),
+    RouterItem(STEP_PAGE, StepPage(), routerTitle: "条目卡片浏览页面"),
+    RouterItem(INHERIT_PAGE, InheritPage(), routerTitle: "inherit页面"),
+    RouterItem(STREAM_PAGE, StreamPage(), routerTitle: "stream页面"),
+    RouterItem(RXDART_PAGE, RxDartPage(), routerTitle: "rxDart页面"),
+    RouterItem(BLOC_PAGE, BlocPage(), routerTitle: "bloc页面"),
+    RouterItem(BUILDER_PAGE, BuilderPage(), routerTitle: "builder页面"),
+    RouterItem(ANIMATION_PAGE, AnimationPage(), routerTitle: "动画页面"),
+    RouterItem(LOCALSAVE_PAGE, LocalSavePage(), routerTitle: "本地存储页面"),
+    RouterItem(CHANNEL_PAGE, ChannelPage(), routerTitle: "通道页面"),
+    RouterItem(MORE_TEXT_PAGE, MoreTextPage(), routerTitle: "通道页面"),
+    RouterItem(SCREEN_ADAPT, ScreenAdaptPage(), routerTitle: "屏幕适配页面"),
+    RouterItem(CAMERA_PAGE, CameraPage(), routerTitle: "相机和相册选取页面"),
+    RouterItem(LATERAL_SPREADS_PAGE, LateralSpreadsPage(), routerTitle: "侧滑页面"),
+    RouterItem(DISMISSIBLE_PAGE, DismissiblePage(), routerTitle: "侧滑删除页面"),
+    RouterItem(OTHER_LISTVIEW_FUNCTION, OtherListViewFunctionPage(),
+        routerTitle: "侧滑删除页面"),
+    RouterItem(EVENT_PAGE, EventPage(), routerTitle: "event页面"),
   ];
 
   /// 跳转到系统路由
   static void navigateTo(BuildContext context, String routerPath,
       {bool replace = false, bool clearStack = false}) async {
-      LogUtil.get().d('跳转到路径$routerPath');
-      await router.navigateTo(context, routerPath,
-          transition: TransitionType.cupertino,
-          replace: replace,
-          clearStack: clearStack);
+    LogUtil.get().d('跳转到路径$routerPath');
+    await router.navigateTo(context, routerPath,
+        transition: TransitionType.cupertino,
+        replace: replace,
+        clearStack: clearStack);
   }
 
   ///返回上个页面
@@ -190,7 +195,7 @@ class RouterUtil {
     routerItemList.forEach((RouterItem item) {
       if (item.widget is ParamStatefulWidget) {
         //LogUtil.get().i("开始添加简单参数路由信息${item.routerTitle} + ${item.routerPath}");
-         router.define(item.routerPath + ":params",
+        router.define(item.routerPath + ":params",
             handler: ParamHandler(item.widget).getHandler());
       } else if (item.widget is ObjectStatefulWidget) {
         //LogUtil.get().i("开始添加对象参数路由信息${item.routerTitle} + ${item.routerPath}");
@@ -232,11 +237,11 @@ class ParamHandler {
   Handler getHandler() {
     return new Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-          String param = params["params"]?.first;
-          LogUtil.get().i('通过接口传入参数,参数$param');
-          widget.param = param;
-          return CommonParentWidget(widget);
-        });
+      String param = params["params"]?.first;
+      LogUtil.get().i('通过接口传入参数,参数$param');
+      widget.param = param;
+      return CommonParentWidget(widget);
+    });
   }
 }
 
@@ -269,7 +274,6 @@ class ObjectHandler {
     });
   }
 }
-
 
 class ObjectLessHandler {
   ObjectStatelessWidget widget;

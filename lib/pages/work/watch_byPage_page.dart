@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/model/post_entity.dart';
@@ -9,7 +8,6 @@ class WatchByPagePage extends StatefulWidget {
 }
 
 class _WatchByPagePageState extends State<WatchByPagePage> {
-
   int _sortColumnIndex = 0;
   bool _sortAscending = false;
 
@@ -29,8 +27,10 @@ class _WatchByPagePageState extends State<WatchByPagePage> {
               sortColumnIndex: _sortColumnIndex,
               sortAscending: _sortAscending,
               header: Text("头部"),
+
               /// 每页数量
               rowsPerPage: 5,
+
               /// 全选不用实现,已经实现看
 //              onSelectAll: (bool select){
 //                debugPrint("onSelectAll = $select");
@@ -44,9 +44,10 @@ class _WatchByPagePageState extends State<WatchByPagePage> {
                   label: Text("标题"),
                   onSort: (int columnIndex, bool ascending) {
                     setState(
-                          () {
+                      () {
                         _sortColumnIndex = columnIndex;
                         _sortAscending = ascending;
+
                         /// 这里 调动 类的方法,不然不行...
                         _postDataSource.sort(ascending);
                       },
@@ -57,6 +58,7 @@ class _WatchByPagePageState extends State<WatchByPagePage> {
                   label: Text("图片"),
                 ),
               ],
+
               /// 内容
               source: _postDataSource,
             ),
@@ -96,9 +98,9 @@ class PostDataSource extends DataTableSource {
   void sort(bool sortAscending) {
     _dataList.sort((a, b) {
       if (sortAscending) {
-        return int.parse(b.index).compareTo (int.parse(a.index));
+        return int.parse(b.index).compareTo(int.parse(a.index));
       } else {
-        return int.parse(a.index).compareTo (int.parse(b.index));
+        return int.parse(a.index).compareTo(int.parse(b.index));
       }
     });
     notifyListeners();

@@ -38,15 +38,15 @@ class _ThemePageState extends State<ThemePage> {
 
   _themeBody(double mSize) {
     return Container(
-        margin: EdgeInsets.only(top: 20,bottom: 20),
+      margin: EdgeInsets.only(top: 20, bottom: 20),
       child: ListView(
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              ThemeWidget(mSize,"粉色","assets/images/pinkPic.jpg"),
-              ThemeWidget(mSize,"绿色","assets/images/pinkPic.jpg"),
-              ThemeWidget(mSize,"黑色","assets/images/pinkPic.jpg"),
+              ThemeWidget(mSize, "粉色", "assets/images/pinkPic.jpg"),
+              ThemeWidget(mSize, "绿色", "assets/images/pinkPic.jpg"),
+              ThemeWidget(mSize, "黑色", "assets/images/pinkPic.jpg"),
             ],
           ),
         ],

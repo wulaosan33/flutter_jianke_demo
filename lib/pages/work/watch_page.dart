@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/model/post_entity.dart';
@@ -9,7 +8,6 @@ class WatchPage extends StatefulWidget {
 }
 
 class _WatchPageState extends State<WatchPage> {
-
   int _sortColumnIndex = 0;
   bool _sortAscending = false;
 
@@ -26,6 +24,7 @@ class _WatchPageState extends State<WatchPage> {
           DataTable(
             sortColumnIndex: _sortColumnIndex,
             sortAscending: _sortAscending,
+
             /// 全选不用实现,已经实现看
 //              onSelectAll: (bool select){
 //                debugPrint("onSelectAll = $select");
@@ -44,9 +43,9 @@ class _WatchPageState extends State<WatchPage> {
 
                     dataList.sort((a, b) {
                       if (_sortAscending) {
-                        return int.parse(b.index).compareTo (int.parse(a.index));
+                        return int.parse(b.index).compareTo(int.parse(a.index));
                       } else {
-                        return int.parse(a.index).compareTo (int.parse(b.index));
+                        return int.parse(a.index).compareTo(int.parse(b.index));
                       }
                     });
                   });
@@ -64,14 +63,17 @@ class _WatchPageState extends State<WatchPage> {
             rows: dataList.asMap().keys.map((index) {
               PostEntity entity = dataList[index];
               return DataRow(
-                /// 是否选择
+
+                  /// 是否选择
                   selected: entity.selected,
+
                   /// 点击选择变化
                   onSelectChanged: (bool select) {
                     setState(() {
                       entity.selected = select;
                     });
                   },
+
                   /// cells
                   cells: [
                     DataCell(Text(entity.title)),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -9,7 +8,6 @@ class InheritPage extends StatefulWidget {
 }
 
 class _InheritPageState extends State<InheritPage> {
-
   MyInheritedTestModel inheritedTestModel;
 
   _initData() {
@@ -39,7 +37,8 @@ class _InheritPageState extends State<InheritPage> {
   @override
   Widget build(BuildContext context) {
     return MyInheritedWidget(
-      /// 这里赋值,子空间需要等到的值
+
+        /// 这里赋值,子空间需要等到的值
         inheritedTestModel: inheritedTestModel,
         increment: _incrementCount,
         reduce: _reduceCount,
@@ -65,11 +64,14 @@ class _InheritPageState extends State<InheritPage> {
                 child: Text(
                     "MyInheritedWidget 内部有TestWidgetA 等子控件,所以子控件通过context可以获得父类MyInheritedWidget"),
               ),
+
               /// 这个 直接调用子控件,不需要传参 ,
               /// ＋号
               TestWidgetA(),
+
               /// 文本
               TestWidgetB(),
+
               /// 减号
               TestWidgetC(
                 callBack: (value) {

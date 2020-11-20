@@ -16,28 +16,32 @@ final backColor9 = Color(0xFF999999);
 
 final fontColor3 = Color(0xFF333333);
 
-
-
 //全局字体样式
-final TextStyle textStyleBlackBold16 = TextStyle(color: Color(0xFF333333),fontSize: 16,fontWeight: FontWeight.bold);
+final TextStyle textStyleBlackBold16 = TextStyle(
+    color: Color(0xFF333333), fontSize: 16, fontWeight: FontWeight.bold);
 
-final TextStyle textStyleBlack16 = TextStyle(color: Color(0xFF333333),fontSize: 16);
+final TextStyle textStyleBlack16 =
+    TextStyle(color: Color(0xFF333333), fontSize: 16);
 
-final TextStyle textStyleBlack14 = TextStyle(color: Color(0xFF333333),fontSize: 14);
+final TextStyle textStyleBlack14 =
+    TextStyle(color: Color(0xFF333333), fontSize: 14);
 
-final TextStyle textStyleBlack12 = TextStyle(color: Color(0xFF333333),fontSize: 12);
+final TextStyle textStyleBlack12 =
+    TextStyle(color: Color(0xFF333333), fontSize: 12);
 
-final TextStyle textStyleGrey16 = TextStyle(color: Color(0xFF999999),fontSize: 16);
+final TextStyle textStyleGrey16 =
+    TextStyle(color: Color(0xFF999999), fontSize: 16);
 
-final TextStyle textStyleGrey14 = TextStyle(color: Color(0xFF999999),fontSize: 14);
+final TextStyle textStyleGrey14 =
+    TextStyle(color: Color(0xFF999999), fontSize: 14);
 
-final TextStyle textStyleGrey12 = TextStyle(color: Color(0xFF999999),fontSize: 12);
-
+final TextStyle textStyleGrey12 =
+    TextStyle(color: Color(0xFF999999), fontSize: 12);
 
 // error错误提示隐藏
 final errorTextStyle = TextStyle(
-  inherit:false,
-  letterSpacing:-12,
+  inherit: false,
+  letterSpacing: -12,
   height: 0,
   fontSize: 1,
 );

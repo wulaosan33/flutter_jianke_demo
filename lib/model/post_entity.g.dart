@@ -20,5 +20,5 @@ Map<String, dynamic> _$PostEntityToJson(PostEntity instance) =>
       'title': instance.title,
       'author': instance.author,
       'imageUrl': instance.imageUrl,
-      'index' : instance.index,
+      'index': instance.index,
     };

@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
@@ -12,7 +11,6 @@ class LateralSpreadsPage extends StatefulWidget {
 }
 
 class _LateralSpreadsPageState extends State<LateralSpreadsPage> {
-
   List<Item> itemList;
 
   @override
@@ -20,7 +18,11 @@ class _LateralSpreadsPageState extends State<LateralSpreadsPage> {
     super.initState();
     Random random = Random();
     itemList = List.generate(
-        30, (index) => Item(Color.fromARGB(255, random.nextInt(255), random.nextInt(255), random.nextInt(255)), index));
+        30,
+        (index) => Item(
+            Color.fromARGB(255, random.nextInt(255), random.nextInt(255),
+                random.nextInt(255)),
+            index));
   }
 
   @override
@@ -126,7 +128,6 @@ class _LateralSpreadsPageState extends State<LateralSpreadsPage> {
     );
   }
 }
-
 
 class Item {
   Color color;

@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -9,7 +8,6 @@ class LocalSavePage extends StatefulWidget {
 }
 
 class _LocalSavePageState extends State<LocalSavePage> {
-
   String name = "1";
   String allValue = "1";
 
@@ -36,7 +34,7 @@ class _LocalSavePageState extends State<LocalSavePage> {
                     child: Text("存储数据"),
                     onPressed: () {
                       Future<SharedPreferences> prefs =
-                      SharedPreferences.getInstance();
+                          SharedPreferences.getInstance();
                       prefs.then((onValue) {
                         onValue.setString("name", "小明");
                       }).whenComplete(() {
@@ -81,7 +79,7 @@ class _LocalSavePageState extends State<LocalSavePage> {
                     child: Text("存储另一个数据"),
                     onPressed: () {
                       Future<SharedPreferences> prefs =
-                      SharedPreferences.getInstance();
+                          SharedPreferences.getInstance();
                       prefs.then((onValue) {
                         onValue.setString("age", "12");
                       });
@@ -95,8 +93,8 @@ class _LocalSavePageState extends State<LocalSavePage> {
                         List<String> list = List();
 
                         onValue.getKeys().forEach((key) => {
-                          list.add(onValue.get(key)),
-                        });
+                              list.add(onValue.get(key)),
+                            });
 
                         print("list = ${list}");
 
@@ -127,5 +125,4 @@ class _LocalSavePageState extends State<LocalSavePage> {
       ),
     );
   }
-
 }

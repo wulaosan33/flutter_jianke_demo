@@ -12,15 +12,15 @@ class DrawerView extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountEmail: Text("916746049@qq.com",textAlign: TextAlign.right,style: TextStyle(color: Colors.black),),
+            accountEmail: Text('916746049@qq.com',textAlign: TextAlign.right,style: TextStyle(color: Colors.black),),
             currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage("assets/images/touxiang.jpg"),
+              backgroundImage: AssetImage('assets/images/touxiang.jpg'),
             ),
-            accountName: Text("秦川剑客",textAlign: TextAlign.right,style: TextStyle(color: Colors.black),),
+            accountName: Text('秦川剑客',textAlign: TextAlign.right,style: TextStyle(color: Colors.black),),
             decoration: BoxDecoration(
               color: Colors.cyanAccent,
               image: DecorationImage(
-                  image: AssetImage("assets/images/cebianbeijing.jpg"),
+                  image: AssetImage('assets/images/cebianbeijing.jpg'),
                   /*填充方式*/
                   fit: BoxFit.cover,
                   /*磨砂效果*/
@@ -32,7 +32,7 @@ class DrawerView extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "消息历史",
+              '消息历史',
               textAlign: TextAlign.left,
               style: TextStyle(color: Colors.black,fontSize: 14),
             ),
@@ -47,7 +47,7 @@ class DrawerView extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "个人收藏",
+              '个人收藏',
               textAlign: TextAlign.left,
               style: TextStyle(color: Colors.black,fontSize: 14),
             ),
@@ -62,7 +62,7 @@ class DrawerView extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "主题切换",
+              '主题切换',
               textAlign: TextAlign.left,
               style: TextStyle(color: Colors.black,fontSize: 14),
             ),
@@ -82,7 +82,7 @@ class DrawerView extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "基本设置",
+              '基本设置',
               textAlign: TextAlign.left,
               style: TextStyle(color: Colors.black,fontSize: 14),
             ),

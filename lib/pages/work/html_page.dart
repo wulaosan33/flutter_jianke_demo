@@ -25,7 +25,7 @@ class _HtmlPageState extends State<HtmlPage> {
   }
 
   Set<JavascriptChannel> _javascriptChannels(BuildContext context) {
-    return [
+    return {
       /// 在h5中注册一个方法,原生也可以调用
       JavascriptChannel(
         name: 'show_native_alert',
@@ -41,7 +41,7 @@ class _HtmlPageState extends State<HtmlPage> {
           showCupertinoAlert(context: context, title: message.message);
         },
       ),
-    ].toSet();
+    };
   }
 
   /// Flutter calls JS
@@ -88,8 +88,8 @@ class _HtmlPageState extends State<HtmlPage> {
               javascriptMode: JavascriptMode.unrestricted,
               javascriptChannels: _javascriptChannels(context),
               initialUrl: Uri.dataFromString(snapshot.data,
-                  mimeType: 'text/html',
-                  encoding: Encoding.getByName('utf-8'))
+                      mimeType: 'text/html',
+                      encoding: Encoding.getByName('utf-8'))
                   .toString(),
               // 加载的url
 

@@ -15,7 +15,6 @@ class DictSelectPage extends StatefulWidget {
 }
 
 class _DictSelectPageState extends State<DictSelectPage> {
-
   @override
   Future initState() {
     super.initState();
@@ -30,16 +29,16 @@ class _DictSelectPageState extends State<DictSelectPage> {
       ),
       body: Builder(
           builder: (BuildContext context) => Padding(
-                padding: EdgeInsets.only(top: 2.0, bottom: 2.0),
-                child:Container()
-              )),
+              padding: EdgeInsets.only(top: 2.0, bottom: 2.0),
+              child: Container())),
     );
   }
 }
 
 class CupertinoPick {
-  static pickImage(BuildContext context, FilePickCallback callback,{bool multipleFlag = false}) {
-    if(multipleFlag){
+  static pickImage(BuildContext context, FilePickCallback callback,
+      {bool multipleFlag = false}) {
+    if (multipleFlag) {
       showCupertinoModalPopup(
           context: context,
           builder: (context) {
@@ -49,7 +48,7 @@ class CupertinoPick {
                   child: const Text('拍照'),
                   onPressed: () async {
                     File image =
-                    await ImagePicker.pickImage(source: ImageSource.camera);
+                        await ImagePicker.pickImage(source: ImageSource.camera);
                     if (null != image) {
                       List<File> fileList = List<File>();
                       fileList.add(image);
@@ -68,8 +67,7 @@ class CupertinoPick {
               ),
             );
           });
-
-    }else{
+    } else {
       showCupertinoModalPopup(
           context: context,
           builder: (context) {
@@ -79,7 +77,7 @@ class CupertinoPick {
                   child: const Text('拍照'),
                   onPressed: () async {
                     File image =
-                    await ImagePicker.pickImage(source: ImageSource.camera);
+                        await ImagePicker.pickImage(source: ImageSource.camera);
                     if (null != image) {
                       List<File> fileList = List<File>();
                       fileList.add(image);
@@ -91,8 +89,8 @@ class CupertinoPick {
                 CupertinoActionSheetAction(
                   child: const Text('选取照片'),
                   onPressed: () async {
-                    File image =
-                    await ImagePicker.pickImage(source: ImageSource.gallery);
+                    File image = await ImagePicker.pickImage(
+                        source: ImageSource.gallery);
                     if (null != image) {
                       List<File> fileList = List<File>();
                       fileList.add(image);
@@ -112,9 +110,5 @@ class CupertinoPick {
             );
           });
     }
-
   }
-
 }
-
-

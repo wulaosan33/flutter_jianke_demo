@@ -11,7 +11,6 @@ import 'package:untitled/pages/common/loading_page.dart';
 import 'package:untitled/utils/alert_util.dart';
 import 'package:untitled/utils/log_util.dart';
 
-
 ///公共父页面
 // ignore: must_be_immutable
 class CommonEventPage extends StatefulWidget {
@@ -20,7 +19,7 @@ class CommonEventPage extends StatefulWidget {
   CommonEventPage(this.childWidget);
 
   @override
-  _CommonEventPageState createState() => new _CommonEventPageState();
+  _CommonEventPageState createState() => _CommonEventPageState();
 }
 
 class _CommonEventPageState extends State<CommonEventPage> {

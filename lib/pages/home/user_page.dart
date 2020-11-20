@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/widgets/drawer_view.dart';
 
-
 /// 用户页
 class UserPage extends StatefulWidget {
   @override
@@ -27,9 +26,9 @@ class _UserPageState extends State<UserPage> {
     );
   }
 
-  _userPageAppBar(){
+  AppBar _userPageAppBar() {
     return AppBar(
-      title: Text(""),
+      title: Text(''),
     );
   }
 
@@ -37,17 +36,8 @@ class _UserPageState extends State<UserPage> {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Container(
-
-          )
-        ],
+        children: <Widget>[Container()],
       ),
     );
   }
-
-
-
 }
-
-

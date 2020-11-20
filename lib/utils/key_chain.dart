@@ -3,9 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 class KeyChain {
-
   static const MethodChannel channel = const MethodChannel('channel_page');
 
   static Future<dynamic> get({@required String key}) {

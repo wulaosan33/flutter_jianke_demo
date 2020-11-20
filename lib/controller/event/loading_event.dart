@@ -2,6 +2,7 @@ import 'package:untitled/controller/event/event_declaration.dart';
 import 'package:untitled/utils/log_util.dart';
 
 ///显示全局遮罩
+// ignore: always_declare_return_types
 showLoading(String msg) {
   ///没有图标展示的时候才出发事件
   if (!LoadingShowFlag().showFlag) {
@@ -13,6 +14,7 @@ showLoading(String msg) {
 }
 
 ///关闭全局遮罩
+// ignore: always_declare_return_types
 closeLoading() {
   if (LoadingShowFlag().showFlag) {
     LogUtil.get().i('开始尝试关闭加载图标: ');
@@ -46,9 +48,7 @@ class LoadingShowFlag {
 
   // 静态、同步、私有访问点
   static LoadingShowFlag _sharedInstance() {
-    if (_instance == null) {
-      _instance = LoadingShowFlag._();
-    }
+    _instance ??= LoadingShowFlag._();
     return _instance;
   }
 }

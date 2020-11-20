@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -9,7 +8,6 @@ class CameraPage extends StatefulWidget {
 }
 
 class _CameraPageState extends State<CameraPage> {
-
   var _imgPath;
 
   @override
@@ -38,8 +36,7 @@ class _CameraPageState extends State<CameraPage> {
               ),
             ],
           ),
-        )
-    );
+        ));
   }
 
   /*图片控件*/
@@ -73,5 +70,4 @@ class _CameraPageState extends State<CameraPage> {
       _imgPath = image;
     });
   }
-
 }

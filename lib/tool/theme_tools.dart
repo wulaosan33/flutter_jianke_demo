@@ -13,8 +13,8 @@ class _ThemeRouteDemoState extends State<ThemeRouteDemo> {
     ThemeData themeData = Theme.of(context);
     return Theme(
       data: ThemeData(
-        primarySwatch: _themeColor,//用于导航栏、FloatingActionButton的背景色等
-        iconTheme: IconThemeData(color: _themeColor),//用于Icon颜色
+        primarySwatch: _themeColor, //用于导航栏、FloatingActionButton的背景色等
+        iconTheme: IconThemeData(color: _themeColor), //用于Icon颜色
       ),
       child: Scaffold(
         appBar: AppBar(
@@ -40,7 +40,7 @@ class _ThemeRouteDemoState extends State<ThemeRouteDemo> {
                   color: Colors.orange,
                 ),
               ),
-              child:Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Icon(Icons.send),
@@ -52,10 +52,10 @@ class _ThemeRouteDemoState extends State<ThemeRouteDemo> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () =>
-              setState(() =>
-              _themeColor = _themeColor==Colors.green ? Colors.orange : Colors.green,
-              ),
+          onPressed: () => setState(
+            () => _themeColor =
+                _themeColor == Colors.green ? Colors.orange : Colors.green,
+          ),
           child: Icon(Icons.palette),
         ),
       ),
