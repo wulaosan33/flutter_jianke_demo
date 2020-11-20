@@ -1,0 +1,15 @@
+include: package:pedantic/analysis_options.1.9.0.yaml
+analyzer:
+  exclude: [build/**]
+#  为了不影响开发，暂时关闭，后面请大家可以打开这个选项进行检查
+#  strong-mode:
+#    implicit-casts: false
+#    implicit-dynamic: false
+
+# 参考：https://dart-lang.github.io/linter/lints/index.html
+#  linter:
+#    rules:
+#      - annotate_overrides
+#      - await_only_futures
+#      - camel_case_types
+#      - cancel_subscriptions
