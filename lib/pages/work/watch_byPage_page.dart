@@ -29,12 +29,12 @@ class _WatchByPagePageState extends State<WatchByPagePage> {
               header: Text("头部"),
 
               /// 每页数量
-              rowsPerPage: 5,
+              rowsPerPage: 10,
 
               /// 全选不用实现,已经实现看
-//              onSelectAll: (bool select){
-//                debugPrint("onSelectAll = $select");
-//              },
+              onSelectAll: (bool select) {
+                debugPrint("onSelectAll = $select");
+              },
               columns: [
                 /// 头 列 ,序号,标题
 //                DataColumn(

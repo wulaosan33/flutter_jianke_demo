@@ -26,9 +26,9 @@ class _WatchPageState extends State<WatchPage> {
             sortAscending: _sortAscending,
 
             /// 全选不用实现,已经实现看
-//              onSelectAll: (bool select){
-//                debugPrint("onSelectAll = $select");
-//              },
+            onSelectAll: (bool select) {
+              debugPrint("onSelectAll = $select");
+            },
             columns: [
               /// 头 列 ,序号,标题
 //                DataColumn(

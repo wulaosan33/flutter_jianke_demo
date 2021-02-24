@@ -99,6 +99,8 @@ final String DISMISSIBLE_PAGE = "/dismissiblePage/";
 final String OTHER_LISTVIEW_FUNCTION = "/otherListViewFunctionPage/";
 //EventPage
 final String EVENT_PAGE = "/eventPage/";
+//自定义数字键盘
+final String ALL_CHLICK = '/allChickPage/';
 
 class RouterUtil {
   static FluroRouter router = FluroRouter();
