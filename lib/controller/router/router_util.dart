@@ -23,6 +23,7 @@ import 'package:untitled/pages/work/inherit_page.dart';
 import 'package:untitled/pages/work/lateral_spreads_page.dart';
 import 'package:untitled/pages/work/local_save_page.dart';
 import 'package:untitled/pages/work/more_text_page.dart';
+import 'package:untitled/pages/work/on_pop_page.dart';
 import 'package:untitled/pages/work/other_listview_function.dart';
 import 'package:untitled/pages/work/rxdart_page.dart';
 import 'package:untitled/pages/work/screen_adapt.dart';
@@ -101,6 +102,8 @@ final String OTHER_LISTVIEW_FUNCTION = "/otherListViewFunctionPage/";
 final String EVENT_PAGE = "/eventPage/";
 //自定义数字键盘
 final String ALL_CHLICK = '/allChickPage/';
+//Navigator 2.0
+final String NAVIGATOR_TWO = '/onPopPage/';
 
 class RouterUtil {
   static FluroRouter router = FluroRouter();
@@ -136,6 +139,7 @@ class RouterUtil {
     RouterItem(OTHER_LISTVIEW_FUNCTION, OtherListViewFunctionPage(),
         routerTitle: "侧滑删除页面"),
     RouterItem(EVENT_PAGE, EventPage(), routerTitle: "event页面"),
+    RouterItem(NAVIGATOR_TWO, OnPopPage(), routerTitle: "Navigator2.0页面"),
   ];
 
   /// 跳转到系统路由

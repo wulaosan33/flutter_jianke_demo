@@ -131,6 +131,8 @@ class _WorkPageState extends State<WorkPage> {
         pageName: OTHER_LISTVIEW_FUNCTION, pageTitle: "27 ListView的其他功能页面");
     var workItem28 =
         WorkItemModel(pageName: EVENT_PAGE, pageTitle: "28 event页面");
+    var workItem29 =
+        WorkItemModel(pageName: NAVIGATOR_TWO, pageTitle: "29 Navigator2.0页面");
     workItemLists.add(workItem1);
     workItemLists.add(workItem2);
     workItemLists.add(workItem3);
@@ -159,5 +161,6 @@ class _WorkPageState extends State<WorkPage> {
     workItemLists.add(workItem26);
     workItemLists.add(workItem27);
     workItemLists.add(workItem28);
+    workItemLists.add(workItem29);
   }
 }
